@@ -2,6 +2,7 @@
 package com.school.dolphin.identity.dto;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.UUID;
 
 public record UserInvitationResponse(
@@ -13,6 +14,12 @@ public record UserInvitationResponse(
         String scopeType,
         UUID scopeId,
         OffsetDateTime expiresAt,
-        String status
+        String status,
+        List<InvitationScopeResponse> scopes
 ) {
+    public record InvitationScopeResponse(
+            String scopeType,
+            UUID scopeId
+    ) {
+    }
 }

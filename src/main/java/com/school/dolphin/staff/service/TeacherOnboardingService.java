@@ -150,7 +150,8 @@ public class TeacherOnboardingService {
                         request.lastName(),
                         teacherRole.getId(),
                         OrganizationScopeType.INSTITUTION,
-                        institution.getId()
+                        institution.getId(),
+                        null
                 );
 
         UserInvitationResponse invitation =

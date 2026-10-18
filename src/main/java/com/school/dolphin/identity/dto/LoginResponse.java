@@ -1,3 +1,4 @@
+
 package com.school.dolphin.identity.dto;
 
 import java.util.UUID;
@@ -9,6 +10,7 @@ public record LoginResponse(
         String refreshToken,
         long refreshExpiresInSeconds,
         UUID userId,
-        String username
+        String username,
+        AccessContextResponse accessContext
 ) {
 }

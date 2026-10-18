@@ -2,11 +2,13 @@
 package com.school.dolphin.identity.dto;
 
 import com.school.dolphin.identity.entity.OrganizationScopeType;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
 import java.util.UUID;
 
 public record CreateUserInvitationRequest(
@@ -30,10 +32,26 @@ public record CreateUserInvitationRequest(
         @NotNull(message = "Role ID is required")
         UUID roleId,
 
-        @NotNull(message = "Scope type is required")
+        // Legacy fields: continue accepting existing single-scope requests.
         OrganizationScopeType scopeType,
 
-        @NotNull(message = "Scope ID is required")
-        UUID scopeId
+        UUID scopeId,
+
+        // New contract: multiple organization scopes.
+        @Size(
+                min = 1,
+                max = 100,
+                message = "Provide between 1 and 100 scopes"
+        )
+        List<@NotNull @Valid InvitationScopeRequest> scopes
 ) {
+        public record InvitationScopeRequest(
+
+                @NotNull(message = "Scope type is required")
+                OrganizationScopeType scopeType,
+
+                @NotNull(message = "Scope ID is required")
+                UUID scopeId
+        ) {
+        }
 }

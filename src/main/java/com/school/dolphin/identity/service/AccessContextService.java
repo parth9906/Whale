@@ -1,9 +1,11 @@
+
 package com.school.dolphin.identity.service;
 
 import com.school.dolphin.identity.dto.AccessContextResponse;
+import com.school.dolphin.identity.entity.UserAccount;
 import com.school.dolphin.identity.entity.UserOrganizationScope;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
 import com.school.dolphin.identity.repository.UserOrganizationScopeRepository;
+import com.school.dolphin.identity.security.AuthenticatedUserResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
@@ -24,9 +26,16 @@ public class AccessContextService {
     public AccessContextResponse getCurrentAccessContext(
             Authentication authentication
     ) {
-        var user = authenticatedUserResolver.requireUserAccount(authentication);
+        UserAccount user =
+                authenticatedUserResolver.requireUserAccount(authentication);
 
-        if (!user.isActive()) {
+        return getAccessContext(user);
+    }
+
+    @Transactional(readOnly = true)
+    public AccessContextResponse getAccessContext(UserAccount user) {
+
+        if (user == null || !user.isActive()) {
             throw new AccessDeniedException(
                     "Inactive users cannot access their access context"
             );
@@ -51,6 +60,7 @@ public class AccessContextService {
 
     private AccessContextResponse.AccessScopeResponse
     toAccessScopeResponse(UserOrganizationScope scope) {
+
         return new AccessContextResponse.AccessScopeResponse(
                 scope.getScopeType().name(),
                 scope.getScopeId()

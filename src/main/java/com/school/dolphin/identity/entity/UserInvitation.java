@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -56,12 +59,20 @@ public class UserInvitation {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+    // Kept for compatibility with existing invitations and consumers.
     @Enumerated(EnumType.STRING)
     @Column(name = "scope_type", nullable = false, length = 30)
     private OrganizationScopeType scopeType;
 
     @Column(name = "scope_id", nullable = false)
     private UUID scopeId;
+
+    @OneToMany(
+            mappedBy = "invitation",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<UserInvitationScope> scopes = new ArrayList<>();
 
     @Column(name = "expires_at", nullable = false)
     private OffsetDateTime expiresAt;
@@ -111,6 +122,33 @@ public class UserInvitation {
         invitation.createdAt = OffsetDateTime.now();
 
         return invitation;
+    }
+
+    public void addScope(
+            OrganizationScopeType scopeType,
+            UUID scopeId
+    ) {
+        boolean duplicate = scopes.stream().anyMatch(existing ->
+                existing.getScopeType() == scopeType
+                        && existing.getScopeId().equals(scopeId)
+        );
+
+        if (duplicate) {
+            throw new IllegalArgumentException(
+                    "Duplicate scope in invitation: "
+                            + scopeType + ":" + scopeId
+            );
+        }
+
+        scopes.add(UserInvitationScope.create(
+                this,
+                scopeType,
+                scopeId
+        ));
+    }
+
+    public List<UserInvitationScope> getScopes() {
+        return Collections.unmodifiableList(scopes);
     }
 
     public boolean isPendingAt(OffsetDateTime now) {

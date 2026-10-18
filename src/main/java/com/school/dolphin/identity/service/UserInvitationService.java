@@ -9,12 +9,14 @@ import com.school.dolphin.identity.dto.AcceptUserInvitationRequest;
 import com.school.dolphin.identity.dto.AcceptUserInvitationResponse;
 import com.school.dolphin.identity.dto.CreateOrganizationScopeRequest;
 import com.school.dolphin.identity.dto.CreateUserInvitationRequest;
-import com.school.dolphin.identity.dto.OrganizationScopeResponse;
+import com.school.dolphin.identity.dto.CreateUserInvitationRequest.InvitationScopeRequest;
 import com.school.dolphin.identity.dto.UserInvitationResponse;
+import com.school.dolphin.identity.dto.UserInvitationResponse.InvitationScopeResponse;
 import com.school.dolphin.identity.entity.OrganizationScopeType;
 import com.school.dolphin.identity.entity.Role;
 import com.school.dolphin.identity.entity.UserAccount;
 import com.school.dolphin.identity.entity.UserInvitation;
+import com.school.dolphin.identity.entity.UserInvitationScope;
 import com.school.dolphin.identity.repository.RoleRepository;
 import com.school.dolphin.identity.repository.UserAccountRepository;
 import com.school.dolphin.identity.repository.UserInvitationRepository;
@@ -25,22 +27,24 @@ import com.school.dolphin.organization.repository.ClusterRepository;
 import com.school.dolphin.organization.repository.EnterpriseRepository;
 import com.school.dolphin.organization.repository.InstitutionRepository;
 import com.school.dolphin.organization.repository.RegionRepository;
-
+import com.school.dolphin.security.SecurityUtils;
+import com.school.dolphin.staff.entity.StaffMember;
 import com.school.dolphin.staff.repository.StaffMemberRepository;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.school.dolphin.staff.entity.StaffMember;
 import org.springframework.transaction.support.TransactionSynchronization;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.time.OffsetDateTime;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -86,42 +90,7 @@ public class UserInvitationService {
         String email = request.email().trim().toLowerCase(Locale.ROOT);
         String username = request.username().trim();
 
-        if (userAccountRepository.findByEmailIgnoreCase(email).isPresent()) {
-            throw new DuplicateResourceException(
-                    "An account already exists for this email"
-            );
-        }
-
-        if (userAccountRepository.existsByUsername(username)) {
-            throw new DuplicateResourceException(
-                    "Username is already in use"
-            );
-        }
-
-        OffsetDateTime now = OffsetDateTime.now();
-
-        if (invitationRepository
-                .existsByUsernameAndAcceptedAtIsNullAndRevokedAtIsNullAndExpiresAtAfter(
-                        username, now
-                )) {
-            throw new DuplicateResourceException(
-                    "A pending invitation already exists for this username"
-            );
-        }
-
-        boolean emailHasPendingInvitation =
-                invitationRepository
-                        .findByInvitationEmailIgnoreCaseAndAcceptedAtIsNullAndRevokedAtIsNull(
-                                email
-                        )
-                        .stream()
-                        .anyMatch(invitation -> invitation.isPendingAt(now));
-
-        if (emailHasPendingInvitation) {
-            throw new DuplicateResourceException(
-                    "A pending invitation already exists for this email"
-            );
-        }
+        validateNoExistingAccountOrInvitation(email, username);
 
         Role role = roleRepository.findById(request.roleId())
                 .orElseThrow(() ->
@@ -136,6 +105,131 @@ public class UserInvitationService {
             );
         }
 
+        validateRoleAssignable(role, authentication);
+
+        List<InvitationScopeRequest> requestedScopes =
+                resolveRequestedScopes(request);
+
+        for (InvitationScopeRequest scope : requestedScopes) {
+            validateScopeExistsAndActive(
+                    scope.scopeType(),
+                    scope.scopeId()
+            );
+
+            if (!canAccessScope(
+                    authentication,
+                    scope.scopeType(),
+                    scope.scopeId()
+            )) {
+                throw new AccessDeniedException(
+                        "You are not authorized to invite users into scope "
+                                + scope.scopeType() + ":" + scope.scopeId()
+                );
+            }
+        }
+
+        // Keep the existing columns populated for legacy consumers.
+        InvitationScopeRequest primaryScope = requestedScopes.get(0);
+
+        OffsetDateTime now = OffsetDateTime.now();
+        String rawToken = tokenService.generateToken();
+        String tokenHash = tokenService.hashToken(rawToken);
+        OffsetDateTime expiresAt =
+                now.plusHours(invitationValidityHours);
+
+        UserInvitation invitation = UserInvitation.create(
+                email,
+                username,
+                request.firstName().trim(),
+                request.lastName() == null
+                        ? null
+                        : request.lastName().trim(),
+                tokenHash,
+                role,
+                primaryScope.scopeType(),
+                primaryScope.scopeId(),
+                expiresAt,
+                creator
+        );
+
+        requestedScopes.forEach(scope ->
+                invitation.addScope(
+                        scope.scopeType(),
+                        scope.scopeId()
+                )
+        );
+
+        invitationRepository.save(invitation);
+
+        String inviterName = (
+                creator.getFirstName() + " " +
+                        (creator.getLastName() == null
+                                ? ""
+                                : creator.getLastName())
+        ).trim();
+
+        // Keep the existing delivery behavior: failure rolls back creation.
+        // Never return or log the raw invitation token.
+        invitationEmailService.sendInvitation(
+                email,
+                invitation.getFirstName(),
+                inviterName,
+                role.getName(),
+                primaryScope.scopeType().name(),
+                rawToken
+        );
+
+        return toResponse(invitation, "PENDING");
+    }
+
+    @Transactional
+    public UserInvitationResponse createTeacherInvitation(
+            CreateUserInvitationRequest request,
+            Authentication authentication,
+            StaffMember staffMember
+    ) {
+        if (staffMember == null || staffMember.getId() == null) {
+            throw new IllegalArgumentException(
+                    "A persisted staff profile is required"
+            );
+        }
+
+        invitationEmailService.ensureEmailDeliveryEnabled();
+
+        UUID creatorId = getAuthenticatedUserId(authentication);
+
+        UserAccount creator = userAccountRepository.findById(creatorId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Inviting user not found: " + creatorId
+                        )
+                );
+
+        String email = request.email().trim().toLowerCase(Locale.ROOT);
+        String username = request.username().trim();
+
+        validateNoExistingAccountOrInvitation(email, username);
+
+        Role role = roleRepository.findById(request.roleId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Role not found: " + request.roleId()
+                        )
+                );
+
+        if (!role.isActive() || !"TEACHER".equals(role.getCode())) {
+            throw new BusinessRuleViolationException(
+                    "Teacher onboarding requires the active TEACHER role"
+            );
+        }
+
+        if (request.scopeType() != OrganizationScopeType.INSTITUTION
+                || request.scopeId() == null) {
+            throw new BusinessRuleViolationException(
+                    "Teacher invitation must use institution scope"
+            );
+        }
+
         validateScopeExistsAndActive(
                 request.scopeType(),
                 request.scopeId()
@@ -147,13 +241,20 @@ public class UserInvitationService {
                 request.scopeId()
         )) {
             throw new AccessDeniedException(
-                    "You are not authorized to invite users into this scope"
+                    "You are not authorized to invite a teacher "
+                            + "into this institution"
             );
         }
 
+        if (staffMember.getUserAccount() != null) {
+            throw new BusinessRuleViolationException(
+                    "Staff profile is already linked to an account"
+            );
+        }
+
+        OffsetDateTime now = OffsetDateTime.now();
         String rawToken = tokenService.generateToken();
         String tokenHash = tokenService.hashToken(rawToken);
-
         OffsetDateTime expiresAt =
                 now.plusHours(invitationValidityHours);
 
@@ -172,144 +273,10 @@ public class UserInvitationService {
                 creator
         );
 
-        invitationRepository.save(invitation);
-
-        String inviterName = (
-                creator.getFirstName() + " " +
-                        (creator.getLastName() == null
-                                ? ""
-                                : creator.getLastName())
-        ).trim();
-
-        // If email delivery fails, the transaction rolls back.
-        // Never return or log the raw token.
-        invitationEmailService.sendInvitation(
-                email,
-                invitation.getFirstName(),
-                inviterName,
-                role.getName(),
-                request.scopeType().name(),
-                rawToken
-        );
-
-        return toResponse(invitation, "PENDING");
-    }
-
-
-    @Transactional
-    public UserInvitationResponse createTeacherInvitation(
-            CreateUserInvitationRequest request,
-            Authentication authentication,
-            StaffMember staffMember
-    ) {
-        if (staffMember == null || staffMember.getId() == null) {
-            throw new IllegalArgumentException(
-                    "A persisted staff profile is required"
-            );
-        }
-
-        // Fail before persisting anything if email delivery is disabled.
-        invitationEmailService.ensureEmailDeliveryEnabled();
-
-        UUID creatorId = getAuthenticatedUserId(authentication);
-
-        UserAccount creator = userAccountRepository.findById(creatorId)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(
-                                "Inviting user not found: " + creatorId
-                        ));
-
-        String email = request.email().trim().toLowerCase(Locale.ROOT);
-        String username = request.username().trim();
-
-        if (userAccountRepository.findByEmailIgnoreCase(email).isPresent()) {
-            throw new DuplicateResourceException(
-                    "An account already exists for this email"
-            );
-        }
-
-        if (userAccountRepository.existsByUsername(username)) {
-            throw new DuplicateResourceException(
-                    "Username is already in use"
-            );
-        }
-
-        OffsetDateTime now = OffsetDateTime.now();
-
-        if (invitationRepository
-                .existsByUsernameAndAcceptedAtIsNullAndRevokedAtIsNullAndExpiresAtAfter(
-                        username, now)) {
-            throw new DuplicateResourceException(
-                    "A pending invitation already exists for this username"
-            );
-        }
-
-        boolean emailHasPendingInvitation = invitationRepository
-                .findByInvitationEmailIgnoreCaseAndAcceptedAtIsNullAndRevokedAtIsNull(
-                        email)
-                .stream()
-                .anyMatch(invitation -> invitation.isPendingAt(now));
-
-        if (emailHasPendingInvitation) {
-            throw new DuplicateResourceException(
-                    "A pending invitation already exists for this email"
-            );
-        }
-
-        Role role = roleRepository.findById(request.roleId())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Role not found"));
-
-        if (!role.isActive() || !"TEACHER".equals(role.getCode())) {
-            throw new BusinessRuleViolationException(
-                    "Teacher onboarding requires the active TEACHER role"
-            );
-        }
-
-        if (request.scopeType() != OrganizationScopeType.INSTITUTION) {
-            throw new BusinessRuleViolationException(
-                    "Teacher invitation must use institution scope"
-            );
-        }
-
-        validateScopeExistsAndActive(
+        // Teacher invitations remain single-institution invitations.
+        invitation.addScope(
                 request.scopeType(),
                 request.scopeId()
-        );
-
-        if (!canAccessScope(
-                authentication,
-                request.scopeType(),
-                request.scopeId())) {
-            throw new AccessDeniedException(
-                    "You are not authorized to invite a teacher into this institution"
-            );
-        }
-
-        if (staffMember.getUserAccount() != null) {
-            throw new BusinessRuleViolationException(
-                    "Staff profile is already linked to an account"
-            );
-        }
-
-        String rawToken = tokenService.generateToken();
-        String tokenHash = tokenService.hashToken(rawToken);
-
-        OffsetDateTime expiresAt = now.plusHours(invitationValidityHours);
-
-        UserInvitation invitation = UserInvitation.create(
-                email,
-                username,
-                request.firstName().trim(),
-                request.lastName() == null
-                        ? null
-                        : request.lastName().trim(),
-                tokenHash,
-                role,
-                request.scopeType(),
-                request.scopeId(),
-                expiresAt,
-                creator
         );
 
         invitation.linkStaffMember(staffMember);
@@ -322,7 +289,7 @@ public class UserInvitationService {
                                 : creator.getLastName())
         ).trim();
 
-        // The surrounding onboarding transaction must commit before email is sent.
+        // The enclosing onboarding transaction must commit before email.
         TransactionSynchronizationManager.registerSynchronization(
                 new TransactionSynchronization() {
                     @Override
@@ -342,7 +309,6 @@ public class UserInvitationService {
         return toResponse(invitation, "PENDING");
     }
 
-
     @Transactional
     public AcceptUserInvitationResponse acceptInvitation(
             AcceptUserInvitationRequest request
@@ -361,7 +327,8 @@ public class UserInvitationService {
 
         if (!invitation.isPendingAt(now)) {
             throw new BusinessRuleViolationException(
-                    "Invitation has expired, been revoked, or already been accepted"
+                    "Invitation has expired, been revoked, "
+                            + "or already been accepted"
             );
         }
 
@@ -395,29 +362,45 @@ public class UserInvitationService {
 
         userAccountRepository.save(user);
 
-        // These existing services enforce role and scope rules.
-        // They participate in this transaction.
         userRoleService.assignRole(
                 user.getId(),
                 invitation.getRole().getId()
         );
 
-        userOrganizationScopeService.assignScope(
-                user.getId(),
-                new CreateOrganizationScopeRequest(
-                        invitation.getScopeType(),
-                        invitation.getScopeId()
-                )
-        );
+        List<UserInvitationScope> scopes = invitation.getScopes();
+
+        if (scopes.isEmpty()) {
+            // Backward compatibility for old invitations.
+            userOrganizationScopeService.assignScope(
+                    user.getId(),
+                    new CreateOrganizationScopeRequest(
+                            invitation.getScopeType(),
+                            invitation.getScopeId()
+                    )
+            );
+        } else {
+            for (UserInvitationScope scope : scopes) {
+                userOrganizationScopeService.assignScope(
+                        user.getId(),
+                        new CreateOrganizationScopeRequest(
+                                scope.getScopeType(),
+                                scope.getScopeId()
+                        )
+                );
+            }
+        }
 
         if (invitation.getStaffMember() != null) {
-            var staffMember = staffMemberRepository
+            StaffMember staffMember = staffMemberRepository
                     .findByIdAndUserAccountIsNull(
-                            invitation.getStaffMember().getId())
+                            invitation.getStaffMember().getId()
+                    )
                     .orElseThrow(() ->
                             new BusinessRuleViolationException(
-                                    "The staff profile is already linked to an account"
-                            ));
+                                    "The staff profile is already linked "
+                                            + "to an account"
+                            )
+                    );
 
             staffMember.setUserAccount(user);
             staffMemberRepository.save(staffMember);
@@ -430,6 +413,119 @@ public class UserInvitationService {
                 user.getUsername(),
                 "Invitation accepted successfully"
         );
+    }
+
+    private void validateNoExistingAccountOrInvitation(
+            String email,
+            String username
+    ) {
+        if (userAccountRepository.findByEmailIgnoreCase(email).isPresent()) {
+            throw new DuplicateResourceException(
+                    "An account already exists for this email"
+            );
+        }
+
+        if (userAccountRepository.existsByUsername(username)) {
+            throw new DuplicateResourceException(
+                    "Username is already in use"
+            );
+        }
+
+        OffsetDateTime now = OffsetDateTime.now();
+
+        if (invitationRepository
+                .existsByUsernameAndAcceptedAtIsNullAndRevokedAtIsNullAndExpiresAtAfter(
+                        username,
+                        now
+                )) {
+            throw new DuplicateResourceException(
+                    "A pending invitation already exists for this username"
+            );
+        }
+
+        boolean emailHasPendingInvitation = invitationRepository
+                .findByInvitationEmailIgnoreCaseAndAcceptedAtIsNullAndRevokedAtIsNull(
+                        email
+                )
+                .stream()
+                .anyMatch(invitation -> invitation.isPendingAt(now));
+
+        if (emailHasPendingInvitation) {
+            throw new DuplicateResourceException(
+                    "A pending invitation already exists for this email"
+            );
+        }
+    }
+
+    private List<InvitationScopeRequest> resolveRequestedScopes(
+            CreateUserInvitationRequest request
+    ) {
+        boolean hasLegacyScope =
+                request.scopeType() != null || request.scopeId() != null;
+
+        boolean hasNewScopes =
+                request.scopes() != null && !request.scopes().isEmpty();
+
+        if (hasLegacyScope && hasNewScopes) {
+            throw new BusinessRuleViolationException(
+                    "Provide either scopes or legacy scopeType/scopeId, "
+                            + "not both"
+            );
+        }
+
+        if (hasLegacyScope) {
+            if (request.scopeType() == null || request.scopeId() == null) {
+                throw new BusinessRuleViolationException(
+                        "Legacy scopeType and scopeId must be provided together"
+                );
+            }
+
+            return List.of(new InvitationScopeRequest(
+                    request.scopeType(),
+                    request.scopeId()
+            ));
+        }
+
+        if (!hasNewScopes) {
+            throw new BusinessRuleViolationException(
+                    "At least one organization scope is required"
+            );
+        }
+
+        Set<String> uniqueScopes = new HashSet<>();
+
+        for (InvitationScopeRequest scope : request.scopes()) {
+            if (scope == null
+                    || scope.scopeType() == null
+                    || scope.scopeId() == null) {
+                throw new BusinessRuleViolationException(
+                        "Every scope must have a scopeType and scopeId"
+                );
+            }
+
+            String key = scope.scopeType().name() + ":" + scope.scopeId();
+
+            if (!uniqueScopes.add(key)) {
+                throw new BusinessRuleViolationException(
+                        "Duplicate organization scope: " + key
+                );
+            }
+        }
+
+        return List.copyOf(request.scopes());
+    }
+
+    private void validateRoleAssignable(
+            Role role,
+            Authentication authentication
+    ) {
+        if ("PLATFORM_ADMIN".equals(role.getCode())
+                && !SecurityUtils.isPlatformAdmin(authentication)) {
+            throw new AccessDeniedException(
+                    "Only a platform administrator can assign "
+                            + "the PLATFORM_ADMIN role"
+            );
+        }
     }
 
     private UUID getAuthenticatedUserId(
@@ -534,6 +630,19 @@ public class UserInvitationService {
             UserInvitation invitation,
             String status
     ) {
+        List<InvitationScopeResponse> scopes =
+                invitation.getScopes().isEmpty()
+                        ? List.of(new InvitationScopeResponse(
+                        invitation.getScopeType().name(),
+                        invitation.getScopeId()
+                ))
+                        : invitation.getScopes().stream()
+                        .map(scope -> new InvitationScopeResponse(
+                                scope.getScopeType().name(),
+                                scope.getScopeId()
+                        ))
+                        .toList();
+
         return new UserInvitationResponse(
                 invitation.getId(),
                 invitation.getInvitationEmail(),
@@ -543,7 +652,8 @@ public class UserInvitationService {
                 invitation.getScopeType().name(),
                 invitation.getScopeId(),
                 invitation.getExpiresAt(),
-                status
+                status,
+                scopes
         );
     }
 }

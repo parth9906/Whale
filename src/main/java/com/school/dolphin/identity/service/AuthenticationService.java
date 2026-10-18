@@ -1,8 +1,10 @@
+
 package com.school.dolphin.identity.service;
 
 import com.school.dolphin.common.exception.InvalidCredentialsException;
 import com.school.dolphin.common.exception.InvalidRefreshTokenException;
 import com.school.dolphin.identity.config.JwtProperties;
+import com.school.dolphin.identity.dto.AccessContextResponse;
 import com.school.dolphin.identity.dto.LoginRequest;
 import com.school.dolphin.identity.dto.LoginResponse;
 import com.school.dolphin.identity.dto.RefreshTokenRequest;
@@ -26,7 +28,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final JwtProperties jwtProperties;
     private final LoginAttemptService loginAttemptService;
-    private final AuthorizationSnapshotService authorizationSnapshotService;
+    private final AccessContextService accessContextService;
     private final RefreshTokenService refreshTokenService;
 
     /**
@@ -41,7 +43,7 @@ public class AuthenticationService {
             JwtService jwtService,
             JwtProperties jwtProperties,
             LoginAttemptService loginAttemptService,
-            AuthorizationSnapshotService authorizationSnapshotService,
+            AccessContextService accessContextService,
             RefreshTokenService refreshTokenService
     ) {
         this.userAccountRepository = userAccountRepository;
@@ -49,7 +51,7 @@ public class AuthenticationService {
         this.jwtService = jwtService;
         this.jwtProperties = jwtProperties;
         this.loginAttemptService = loginAttemptService;
-        this.authorizationSnapshotService = authorizationSnapshotService;
+        this.accessContextService = accessContextService;
         this.refreshTokenService = refreshTokenService;
         this.dummyPasswordHash = passwordEncoder.encode(
                 "dolphin-nonexistent-account-timing-guard");
@@ -84,30 +86,31 @@ public class AuthenticationService {
 
         OffsetDateTime now = OffsetDateTime.now();
 
-        AuthorizationSnapshotService.Snapshot snapshot =
-                authorizationSnapshotService.load(user.getId());
+        AccessContextResponse accessContext =
+                accessContextService.getAccessContext(user);
 
         String accessToken = jwtService.generateAccessToken(
                 user.getId(),
                 user.getUsername(),
-                snapshot.roleCodes(),
-                snapshot.permissionCodes()
+                accessContext.roles(),
+                accessContext.permissions()
         );
 
         RefreshTokenService.IssuedRefreshToken refreshToken =
                 refreshTokenService.issueNewSession(user, now);
 
-        return response(accessToken, refreshToken, user);
+        return response(accessToken, refreshToken, user, accessContext);
     }
 
     /**
-     * Rotates a refresh session and issues a new access token. The refresh row
-     * is locked for the duration of the transaction, so two concurrent
-     * refreshes cannot both rotate the same token. Current account status and
-     * effective permissions are reloaded before any token is minted.
+     * Rotates a refresh session and issues a new access token.
      *
-     * <p>{@code noRollbackFor} keeps a reuse-detection family revocation
-     * committed even though this method then fails the request.
+     * The refresh row remains locked for the duration of the transaction.
+     * Current account status and effective authorization data are reloaded
+     * before issuing the replacement tokens.
+     *
+     * noRollbackFor ensures replay-detection family revocation remains
+     * committed when this method rejects a reused refresh token.
      */
     @Transactional(noRollbackFor = InvalidRefreshTokenException.class)
     public LoginResponse refresh(RefreshTokenRequest request) {
@@ -120,8 +123,7 @@ public class AuthenticationService {
                         "Refresh token is invalid"));
 
         if (current.isRevoked()) {
-            // Replay of a rotated (or logged-out) token: assume theft and
-            // revoke the entire session family.
+            // A reused token may indicate theft. Revoke its entire family.
             refreshTokenService.revokeFamily(current.getFamilyId(), now);
 
             throw new InvalidRefreshTokenException(
@@ -142,8 +144,9 @@ public class AuthenticationService {
                     "Refresh session is no longer valid");
         }
 
-        AuthorizationSnapshotService.Snapshot snapshot =
-                authorizationSnapshotService.load(user.getId());
+        // Resolve current roles, permissions and scopes from persisted data.
+        AccessContextResponse accessContext =
+                accessContextService.getAccessContext(user);
 
         RefreshTokenService.IssuedRefreshToken rotated =
                 refreshTokenService.rotate(current, now);
@@ -151,17 +154,16 @@ public class AuthenticationService {
         String accessToken = jwtService.generateAccessToken(
                 user.getId(),
                 user.getUsername(),
-                snapshot.roleCodes(),
-                snapshot.permissionCodes()
+                accessContext.roles(),
+                accessContext.permissions()
         );
 
-        return response(accessToken, rotated, user);
+        return response(accessToken, rotated, user, accessContext);
     }
 
     /**
-     * Revokes the session family that owns the supplied refresh token. Silently
-     * succeeds for unknown tokens so logout cannot be used to probe session
-     * validity.
+     * Revokes the session family that owns the supplied refresh token.
+     * Unknown tokens are ignored to avoid exposing session validity.
      */
     @Transactional
     public void logout(String rawRefreshToken) {
@@ -176,7 +178,8 @@ public class AuthenticationService {
     private LoginResponse response(
             String accessToken,
             RefreshTokenService.IssuedRefreshToken refreshToken,
-            UserAccount user
+            UserAccount user,
+            AccessContextResponse accessContext
     ) {
         return new LoginResponse(
                 accessToken,
@@ -185,7 +188,8 @@ public class AuthenticationService {
                 refreshToken.token(),
                 jwtProperties.refreshExpirationMs() / 1000,
                 user.getId(),
-                user.getUsername()
+                user.getUsername(),
+                accessContext
         );
     }
 }
