@@ -1,6 +1,6 @@
-# Dolphin Platform — API Contract Index
+# Whale Platform — API Contract Index
 
-This directory is the entry point for Dolphin's API contracts. Each feature
+This directory is the entry point for Whale's API contracts. Each feature
 module has its own `README.md` colocated with its Java package, documenting the
 endpoints that module owns.
 
@@ -32,7 +32,7 @@ Token properties (see `identity/README.md`):
 - The signing key comes from the `JWT_SECRET` environment variable. The
   application fails fast at startup if it is missing, not valid base64, or
   shorter than 256 bits.
-- Lifetime: 900 seconds (15 minutes), from `dolphin.security.jwt.expiration-ms`.
+- Lifetime: 900 seconds (15 minutes), from `whale.security.jwt.expiration-ms`.
 - Claims: `sub` (user id), `username`, `roles`, `permissions`, `iss`, `aud`,
   `iat`, `exp`, `jti`.
 - `roles` and `permissions` are the caller's effective role and permission
@@ -206,27 +206,27 @@ responses.
 
 | Module | Package | Status | Contract |
 |---|---|---|---|
-| Identity & authentication | `identity` | Implemented | [identity/README.md](../../src/main/java/com/school/dolphin/identity/README.md) |
-| Organization hierarchy | `organization` | Implemented | [organization/README.md](../../src/main/java/com/school/dolphin/organization/README.md) |
-| Students | `student` | Implemented | [student/README.md](../../src/main/java/com/school/dolphin/student/README.md) |
-| Staff | `staff` | Implemented | [staff/README.md](../../src/main/java/com/school/dolphin/staff/README.md) |
-| Academic structure & subjects | `academic` | Implemented | [academic/README.md](../../src/main/java/com/school/dolphin/academic/README.md) |
-| Attendance | `attendance` | Implemented | [attendance/README.md](../../src/main/java/com/school/dolphin/attendance/README.md) |
-| Assessment & marks | `assessment` | Implemented | [assessment/README.md](../../src/main/java/com/school/dolphin/assessment/README.md) |
-| Timetable & scheduling | `timetable` | Implemented | [timetable/README.md](../../src/main/java/com/school/dolphin/timetable/README.md) |
-| Staff & student leave | `leave` | Implemented | [leave/README.md](../../src/main/java/com/school/dolphin/leave/README.md) |
-| Events & calendar | `calendar` | Implemented | [calendar/README.md](../../src/main/java/com/school/dolphin/calendar/README.md) |
-| Guardians | `guardian` | Implemented | [guardian/README.md](../../src/main/java/com/school/dolphin/guardian/README.md) |
-| Parent portal | `parent` | Partially Implemented | [parent/README.md](../../src/main/java/com/school/dolphin/parent/README.md) |
-| Homework & assignments | `homework` | Implemented | [homework/README.md](../../src/main/java/com/school/dolphin/homework/README.md) |
-| Discipline & behaviour | `discipline` | Implemented | [discipline/README.md](../../src/main/java/com/school/dolphin/discipline/README.md) |
-| Admissions | `admissions` | Implemented | [admissions/README.md](../../src/main/java/com/school/dolphin/admissions/README.md) |
-| Hostel | `hostel` | Implemented | [hostel/README.md](../../src/main/java/com/school/dolphin/hostel/README.md) |
-| Inventory | `inventory` | Implemented | [inventory/README.md](../../src/main/java/com/school/dolphin/inventory/README.md) |
-| Mess / canteen | `mess` | Implemented | [mess/README.md](../../src/main/java/com/school/dolphin/mess/README.md) |
-| Notifications & outbox | `notification` | Implemented | [notification/README.md](../../src/main/java/com/school/dolphin/notification/README.md) |
-| Analytics | `analytics` | Partially Implemented | [analytics/README.md](../../src/main/java/com/school/dolphin/analytics/README.md) |
-| Certificates & documents | `document` | Partially Implemented | [document/README.md](../../src/main/java/com/school/dolphin/document/README.md) |
+| Identity & authentication | `identity` | Implemented | [identity/README.md](../../src/main/java/com/school/whale/identity/README.md) |
+| Organization hierarchy | `organization` | Implemented | [organization/README.md](../../src/main/java/com/school/whale/organization/README.md) |
+| Students | `student` | Implemented | [student/README.md](../../src/main/java/com/school/whale/student/README.md) |
+| Staff | `staff` | Implemented | [staff/README.md](../../src/main/java/com/school/whale/staff/README.md) |
+| Academic structure & subjects | `academic` | Implemented | [academic/README.md](../../src/main/java/com/school/whale/academic/README.md) |
+| Attendance | `attendance` | Implemented | [attendance/README.md](../../src/main/java/com/school/whale/attendance/README.md) |
+| Assessment & marks | `assessment` | Implemented | [assessment/README.md](../../src/main/java/com/school/whale/assessment/README.md) |
+| Timetable & scheduling | `timetable` | Implemented | [timetable/README.md](../../src/main/java/com/school/whale/timetable/README.md) |
+| Staff & student leave | `leave` | Implemented | [leave/README.md](../../src/main/java/com/school/whale/leave/README.md) |
+| Events & calendar | `calendar` | Implemented | [calendar/README.md](../../src/main/java/com/school/whale/calendar/README.md) |
+| Guardians | `guardian` | Implemented | [guardian/README.md](../../src/main/java/com/school/whale/guardian/README.md) |
+| Parent portal | `parent` | Partially Implemented | [parent/README.md](../../src/main/java/com/school/whale/parent/README.md) |
+| Homework & assignments | `homework` | Implemented | [homework/README.md](../../src/main/java/com/school/whale/homework/README.md) |
+| Discipline & behaviour | `discipline` | Implemented | [discipline/README.md](../../src/main/java/com/school/whale/discipline/README.md) |
+| Admissions | `admissions` | Implemented | [admissions/README.md](../../src/main/java/com/school/whale/admissions/README.md) |
+| Hostel | `hostel` | Implemented | [hostel/README.md](../../src/main/java/com/school/whale/hostel/README.md) |
+| Inventory | `inventory` | Implemented | [inventory/README.md](../../src/main/java/com/school/whale/inventory/README.md) |
+| Mess / canteen | `mess` | Implemented | [mess/README.md](../../src/main/java/com/school/whale/mess/README.md) |
+| Notifications & outbox | `notification` | Implemented | [notification/README.md](../../src/main/java/com/school/whale/notification/README.md) |
+| Analytics | `analytics` | Partially Implemented | [analytics/README.md](../../src/main/java/com/school/whale/analytics/README.md) |
+| Certificates & documents | `document` | Partially Implemented | [document/README.md](../../src/main/java/com/school/whale/document/README.md) |
 
 Status legend: **Implemented** (endpoints exist), **Partially Implemented**
 (ships only part of the frozen V1 scope), **Proposed** (no code yet).

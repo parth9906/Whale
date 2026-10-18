@@ -1,5 +1,5 @@
 
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

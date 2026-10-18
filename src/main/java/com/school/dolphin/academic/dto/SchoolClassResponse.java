@@ -1,4 +1,4 @@
-package com.school.dolphin.academic.dto;
+package com.school.whale.academic.dto;
 
 
 import java.util.UUID;

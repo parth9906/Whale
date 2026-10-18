@@ -1,9 +1,9 @@
-package com.school.dolphin.timetable.entity;
+package com.school.whale.timetable.entity;
 
-import com.school.dolphin.academic.entity.AcademicSubject;
-import com.school.dolphin.academic.entity.AcademicYear;
-import com.school.dolphin.academic.entity.ClassSection;
-import com.school.dolphin.staff.entity.StaffAssignment;
+import com.school.whale.academic.entity.AcademicSubject;
+import com.school.whale.academic.entity.AcademicYear;
+import com.school.whale.academic.entity.ClassSection;
+import com.school.whale.staff.entity.StaffAssignment;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,10 +1,10 @@
-package com.school.dolphin.timetable.controller;
+package com.school.whale.timetable.controller;
 
-import com.school.dolphin.timetable.dto.*;
+import com.school.whale.timetable.dto.*;
 
-import com.school.dolphin.timetable.service.LessonOccurrenceService;
-import com.school.dolphin.timetable.service.SubstituteAssignmentService;
-import com.school.dolphin.timetable.service.TimetableService;
+import com.school.whale.timetable.service.LessonOccurrenceService;
+import com.school.whale.timetable.service.SubstituteAssignmentService;
+import com.school.whale.timetable.service.TimetableService;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

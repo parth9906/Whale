@@ -1,11 +1,11 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.dto.CreateRoleRequest;
-import com.school.dolphin.identity.dto.RoleResponse;
-import com.school.dolphin.identity.entity.Role;
-import com.school.dolphin.identity.repository.RoleRepository;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.dto.CreateRoleRequest;
+import com.school.whale.identity.dto.RoleResponse;
+import com.school.whale.identity.entity.Role;
+import com.school.whale.identity.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

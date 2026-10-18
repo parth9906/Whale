@@ -1,9 +1,9 @@
-package com.school.dolphin.mess.controller;
+package com.school.whale.mess.controller;
 
-import com.school.dolphin.mess.dto.CreateMessMealRequest;
-import com.school.dolphin.mess.dto.MessMealResponse;
-import com.school.dolphin.mess.dto.MessMealSummaryResponse;
-import com.school.dolphin.mess.service.MessMealService;
+import com.school.whale.mess.dto.CreateMessMealRequest;
+import com.school.whale.mess.dto.MessMealResponse;
+import com.school.whale.mess.dto.MessMealSummaryResponse;
+import com.school.whale.mess.service.MessMealService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

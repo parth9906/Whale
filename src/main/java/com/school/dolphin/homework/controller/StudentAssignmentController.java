@@ -1,9 +1,9 @@
-package com.school.dolphin.homework.controller;
+package com.school.whale.homework.controller;
 
-import com.school.dolphin.homework.dto.AssignmentResponse;
-import com.school.dolphin.homework.dto.AssignmentSubmissionResponse;
-import com.school.dolphin.homework.dto.SubmitAssignmentRequest;
-import com.school.dolphin.homework.service.StudentAssignmentService;
+import com.school.whale.homework.dto.AssignmentResponse;
+import com.school.whale.homework.dto.AssignmentSubmissionResponse;
+import com.school.whale.homework.dto.SubmitAssignmentRequest;
+import com.school.whale.homework.service.StudentAssignmentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

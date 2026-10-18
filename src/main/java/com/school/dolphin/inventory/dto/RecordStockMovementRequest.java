@@ -1,6 +1,6 @@
-package com.school.dolphin.inventory.dto;
+package com.school.whale.inventory.dto;
 
-import com.school.dolphin.inventory.entity.InventoryReferenceType;
+import com.school.whale.inventory.entity.InventoryReferenceType;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;

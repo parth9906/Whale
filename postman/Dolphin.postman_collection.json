@@ -1,8 +1,8 @@
 {
   "info": {
-    "name": "Dolphin API",
+    "name": "Whale API",
     "_postman_id": "b7f3c2a0-1d2e-4f5a-9c8b-0a1b2c3d4e5f",
-    "description": "Dolphin School Management Platform - REST API v1. Generated from the repository source (controllers, DTOs, @PreAuthorize, SecurityConfig). Public endpoints: POST /api/v1/auth/login, /refresh, /logout and POST /api/v1/guardian-invitations/accept. Every other request requires 'Authorization: Bearer {{accessToken}}' (collection-level bearer auth). Create requests must run before requests that consume the returned id. See docs/testing/API_TESTING.md for prerequisites, ordering and cURL equivalents.",
+    "description": "Whale School Management Platform - REST API v1. Generated from the repository source (controllers, DTOs, @PreAuthorize, SecurityConfig). Public endpoints: POST /api/v1/auth/login, /refresh, /logout and POST /api/v1/guardian-invitations/accept. Every other request requires 'Authorization: Bearer {{accessToken}}' (collection-level bearer auth). Create requests must run before requests that consume the returned id. See docs/testing/API_TESTING.md for prerequisites, ordering and cURL equivalents.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "auth": {
@@ -889,7 +889,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"code\": \"DOLPHIN\", \"name\": \"Dolphin Education Group\"}",
+              "raw": "{\"code\": \"DOLPHIN\", \"name\": \"Whale Education Group\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1176,7 +1176,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"clusterId\": \"{{clusterId}}\", \"code\": \"INST-01\", \"name\": \"Dolphin Public School\", \"institutionType\": \"K12\"}",
+              "raw": "{\"clusterId\": \"{{clusterId}}\", \"code\": \"INST-01\", \"name\": \"Whale Public School\", \"institutionType\": \"K12\"}",
               "options": {
                 "raw": {
                   "language": "json"

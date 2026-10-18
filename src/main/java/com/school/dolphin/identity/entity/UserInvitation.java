@@ -1,7 +1,7 @@
 
-package com.school.dolphin.identity.entity;
+package com.school.whale.identity.entity;
 
-import com.school.dolphin.staff.entity.StaffMember;
+import com.school.whale.staff.entity.StaffMember;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

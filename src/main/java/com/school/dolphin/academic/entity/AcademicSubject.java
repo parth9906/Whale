@@ -1,7 +1,7 @@
 
-package com.school.dolphin.academic.entity;
+package com.school.whale.academic.entity;
 
-import com.school.dolphin.organization.entity.Institution;
+import com.school.whale.organization.entity.Institution;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

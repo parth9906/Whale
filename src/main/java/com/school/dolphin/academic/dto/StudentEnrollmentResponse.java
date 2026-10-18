@@ -1,7 +1,7 @@
-package com.school.dolphin.academic.dto;
+package com.school.whale.academic.dto;
 
 
-import com.school.dolphin.academic.entity.EnrollmentStatus;
+import com.school.whale.academic.entity.EnrollmentStatus;
 
 import java.time.LocalDate;
 import java.util.UUID;

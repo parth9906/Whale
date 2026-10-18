@@ -1,4 +1,4 @@
-package com.school.dolphin.admissions.entity;
+package com.school.whale.admissions.entity;
 
 public enum AdmissionApplicationStatus {
     APPLIED,

@@ -1,10 +1,10 @@
-package com.school.dolphin.inventory.controller;
+package com.school.whale.inventory.controller;
 
-import com.school.dolphin.inventory.dto.CreateInventoryItemRequest;
-import com.school.dolphin.inventory.dto.InventoryItemResponse;
-import com.school.dolphin.inventory.dto.UpdateInventoryItemRequest;
-import com.school.dolphin.inventory.entity.InventoryItemCategory;
-import com.school.dolphin.inventory.service.InventoryItemService;
+import com.school.whale.inventory.dto.CreateInventoryItemRequest;
+import com.school.whale.inventory.dto.InventoryItemResponse;
+import com.school.whale.inventory.dto.UpdateInventoryItemRequest;
+import com.school.whale.inventory.entity.InventoryItemCategory;
+import com.school.whale.inventory.service.InventoryItemService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

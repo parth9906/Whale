@@ -1,7 +1,7 @@
-package com.school.dolphin.identity.repository;
+package com.school.whale.identity.repository;
 
-import com.school.dolphin.identity.entity.RolePermission;
-import com.school.dolphin.identity.entity.RolePermissionId;
+import com.school.whale.identity.entity.RolePermission;
+import com.school.whale.identity.entity.RolePermissionId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

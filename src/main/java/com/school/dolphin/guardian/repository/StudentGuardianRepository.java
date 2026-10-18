@@ -1,7 +1,7 @@
 
-package com.school.dolphin.guardian.repository;
+package com.school.whale.guardian.repository;
 
-import com.school.dolphin.guardian.entity.StudentGuardian;
+import com.school.whale.guardian.entity.StudentGuardian;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

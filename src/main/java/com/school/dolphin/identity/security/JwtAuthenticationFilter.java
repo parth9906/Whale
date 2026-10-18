@@ -1,8 +1,8 @@
 
-package com.school.dolphin.identity.security;
+package com.school.whale.identity.security;
 
-import com.school.dolphin.identity.service.JwtService;
-import com.school.dolphin.identity.service.JwtService.AccessTokenClaims;
+import com.school.whale.identity.service.JwtService;
+import com.school.whale.identity.service.JwtService.AccessTokenClaims;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

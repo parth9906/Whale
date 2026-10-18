@@ -1,4 +1,4 @@
-package com.school.dolphin.timetable.service;
+package com.school.whale.timetable.service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -6,24 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.repository.StaffLeaveRequestRepository;
-import com.school.dolphin.academic.entity.ClassSection;
-import com.school.dolphin.academic.repository.ClassSectionRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.repository.StaffLeaveRequestRepository;
+import com.school.whale.academic.entity.ClassSection;
+import com.school.whale.academic.repository.ClassSectionRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.timetable.entity.LessonOccurrence;
-import com.school.dolphin.timetable.entity.LessonOccurrenceStatus;
-import com.school.dolphin.timetable.entity.ScheduledLesson;
-import com.school.dolphin.timetable.dto.LessonOccurrenceResponse;
-import com.school.dolphin.timetable.repository.LessonOccurrenceRepository;
-import com.school.dolphin.timetable.repository.ScheduledLessonRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.timetable.entity.LessonOccurrence;
+import com.school.whale.timetable.entity.LessonOccurrenceStatus;
+import com.school.whale.timetable.entity.ScheduledLesson;
+import com.school.whale.timetable.dto.LessonOccurrenceResponse;
+import com.school.whale.timetable.repository.LessonOccurrenceRepository;
+import com.school.whale.timetable.repository.ScheduledLessonRepository;
 
 import lombok.RequiredArgsConstructor;
 

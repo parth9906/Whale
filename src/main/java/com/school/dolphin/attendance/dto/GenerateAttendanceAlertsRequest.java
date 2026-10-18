@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

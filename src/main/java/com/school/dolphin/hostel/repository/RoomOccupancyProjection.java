@@ -1,4 +1,4 @@
-package com.school.dolphin.hostel.repository;
+package com.school.whale.hostel.repository;
 
 import java.util.UUID;
 

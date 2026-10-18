@@ -1,9 +1,9 @@
 
-package com.school.dolphin.attendance.controller;
+package com.school.whale.attendance.controller;
 
-import com.school.dolphin.attendance.dto.AttendanceAlertAdminResponse;
-import com.school.dolphin.attendance.dto.AttendanceAlertAuditResponse;
-import com.school.dolphin.attendance.service.AttendanceAlertResolutionService;
+import com.school.whale.attendance.dto.AttendanceAlertAdminResponse;
+import com.school.whale.attendance.dto.AttendanceAlertAuditResponse;
+import com.school.whale.attendance.service.AttendanceAlertResolutionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;

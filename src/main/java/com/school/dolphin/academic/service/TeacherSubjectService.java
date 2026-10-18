@@ -1,21 +1,21 @@
 
-package com.school.dolphin.academic.service;
+package com.school.whale.academic.service;
 
-import com.school.dolphin.academic.dto.*;
-import com.school.dolphin.academic.entity.AcademicSubject;
-import com.school.dolphin.academic.entity.TeacherSubjectAssignment;
-import com.school.dolphin.academic.repository.AcademicSubjectRepository;
-import com.school.dolphin.academic.repository.TeacherSubjectAssignmentRepository;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.organization.repository.InstitutionRepository;
-import com.school.dolphin.staff.entity.StaffAssignment;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffType;
-import com.school.dolphin.staff.repository.StaffAssignmentRepository;
+import com.school.whale.academic.dto.*;
+import com.school.whale.academic.entity.AcademicSubject;
+import com.school.whale.academic.entity.TeacherSubjectAssignment;
+import com.school.whale.academic.repository.AcademicSubjectRepository;
+import com.school.whale.academic.repository.TeacherSubjectAssignmentRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.organization.repository.InstitutionRepository;
+import com.school.whale.staff.entity.StaffAssignment;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffType;
+import com.school.whale.staff.repository.StaffAssignmentRepository;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

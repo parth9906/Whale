@@ -1,6 +1,6 @@
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
-import com.school.dolphin.attendance.entity.LessonAttendanceStatus;
+import com.school.whale.attendance.entity.LessonAttendanceStatus;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

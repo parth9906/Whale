@@ -1,6 +1,6 @@
-package com.school.dolphin.student.dto;
+package com.school.whale.student.dto;
 
-import com.school.dolphin.student.entity.StudentAccountLink;
+import com.school.whale.student.entity.StudentAccountLink;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

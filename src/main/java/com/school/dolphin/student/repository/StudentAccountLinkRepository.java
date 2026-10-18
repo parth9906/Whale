@@ -1,7 +1,7 @@
 
-package com.school.dolphin.student.repository;
+package com.school.whale.student.repository;
 
-import com.school.dolphin.student.entity.StudentAccountLink;
+import com.school.whale.student.entity.StudentAccountLink;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,8 +1,8 @@
-package com.school.dolphin.inventory.repository;
+package com.school.whale.inventory.repository;
 
-import com.school.dolphin.inventory.entity.InventoryMovementType;
-import com.school.dolphin.inventory.entity.InventoryReferenceType;
-import com.school.dolphin.inventory.entity.InventoryStockMovement;
+import com.school.whale.inventory.entity.InventoryMovementType;
+import com.school.whale.inventory.entity.InventoryReferenceType;
+import com.school.whale.inventory.entity.InventoryStockMovement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

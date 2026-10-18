@@ -1,9 +1,9 @@
-package com.school.dolphin.hostel.controller;
+package com.school.whale.hostel.controller;
 
-import com.school.dolphin.hostel.dto.CreateHostelRequest;
-import com.school.dolphin.hostel.dto.HostelResponse;
-import com.school.dolphin.hostel.dto.UpdateHostelRequest;
-import com.school.dolphin.hostel.service.HostelService;
+import com.school.whale.hostel.dto.CreateHostelRequest;
+import com.school.whale.hostel.dto.HostelResponse;
+import com.school.whale.hostel.dto.UpdateHostelRequest;
+import com.school.whale.hostel.service.HostelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

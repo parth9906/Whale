@@ -1,10 +1,10 @@
-package com.school.dolphin.hostel.controller;
+package com.school.whale.hostel.controller;
 
-import com.school.dolphin.hostel.dto.CreateHostelAllocationRequest;
-import com.school.dolphin.hostel.dto.HostelAllocationResponse;
-import com.school.dolphin.hostel.dto.VacateHostelAllocationRequest;
-import com.school.dolphin.hostel.entity.HostelAllocationStatus;
-import com.school.dolphin.hostel.service.HostelAllocationService;
+import com.school.whale.hostel.dto.CreateHostelAllocationRequest;
+import com.school.whale.hostel.dto.HostelAllocationResponse;
+import com.school.whale.hostel.dto.VacateHostelAllocationRequest;
+import com.school.whale.hostel.entity.HostelAllocationStatus;
+import com.school.whale.hostel.service.HostelAllocationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

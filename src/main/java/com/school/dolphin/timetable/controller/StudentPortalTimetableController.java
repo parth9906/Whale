@@ -1,7 +1,7 @@
-package com.school.dolphin.timetable.controller;
+package com.school.whale.timetable.controller;
 
-import com.school.dolphin.timetable.dto.ScheduledLessonResponse;
-import com.school.dolphin.timetable.service.TimetableService;
+import com.school.whale.timetable.dto.ScheduledLessonResponse;
+import com.school.whale.timetable.service.TimetableService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;

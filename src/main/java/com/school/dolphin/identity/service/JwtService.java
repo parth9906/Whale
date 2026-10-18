@@ -1,6 +1,6 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.identity.config.JwtProperties;
+import com.school.whale.identity.config.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;

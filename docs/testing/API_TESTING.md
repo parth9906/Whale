@@ -1,6 +1,6 @@
-# Dolphin API Testing Guide (Postman + cURL)
+# Whale API Testing Guide (Postman + cURL)
 
-This guide lets you exercise **every implemented Dolphin REST endpoint** from
+This guide lets you exercise **every implemented Whale REST endpoint** from
 either Postman or the command line. It is generated from the repository source
 (controllers, `@PreAuthorize`, request/response DTOs, `SecurityConfig`,
 Flyway migrations) and the module `README.md` files. The source code is the
@@ -8,8 +8,8 @@ authority.
 
 Companion artifacts:
 
-- `postman/Dolphin.postman_collection.json` — 203 requests in 28 folders.
-- `postman/Dolphin.local.postman_environment.json` — `baseUrl` + token/id variables.
+- `postman/Whale.postman_collection.json` — 203 requests in 28 folders.
+- `postman/Whale.local.postman_environment.json` — `baseUrl` + token/id variables.
 
 > **Scope.** This guide only *describes* how to run requests. Do not run these
 > against a database you are not authorized to touch. Nothing here starts the
@@ -19,11 +19,11 @@ Companion artifacts:
 
 ## 1. Prerequisites
 
-- The Dolphin backend is running locally. `src/main/resources/application.yaml`
+- The Whale backend is running locally. `src/main/resources/application.yaml`
   sets **no `server.port`**, so the default port is **8080** →
   `http://localhost:8080`.
 - PostgreSQL is reachable at the configured datasource
-  (`jdbc:postgresql://localhost:5432/dolphin`, user `springuser`) and the
+  (`jdbc:postgresql://localhost:5432/whale`, user `springuser`) and the
   Flyway migrations have been applied.
 - The `JWT_SECRET` environment variable is set (the app fails fast without a
   valid base64 key of at least 32 bytes). Access tokens live 900 s
@@ -46,7 +46,7 @@ hash (BCrypt by default, i.e. a value like `{bcrypt}$2a$...`). Sketch:
 ```sql
 -- Run this yourself, in your own environment. Not executed by this guide.
 INSERT INTO user_account (id, username, email, password_hash, first_name, last_name, active, created_at, updated_at)
-VALUES (gen_random_uuid(), 'dolphin_admin', 'admin@example.org', '{bcrypt}$2a$10$<hash>', 'Dolphin', 'Admin', TRUE, NOW(), NOW());
+VALUES (gen_random_uuid(), 'dolphin_admin', 'admin@example.org', '{bcrypt}$2a$10$<hash>', 'Whale', 'Admin', TRUE, NOW(), NOW());
 
 INSERT INTO user_role (user_id, role_id)
 SELECT u.id, r.id FROM user_account u, role r
@@ -70,7 +70,7 @@ export ACCESS_TOKEN=""
 export REFRESH_TOKEN=""
 ```
 
-In Postman: import both files, select the **Dolphin local** environment, then set
+In Postman: import both files, select the **Whale local** environment, then set
 `adminUsername` / `adminPassword`. The login request writes `accessToken`,
 `refreshToken` and `userId` into both collection and environment variables.
 
@@ -164,7 +164,7 @@ UUID string**. Capture the value and reuse it in the follow-up requests:
 # bare UUID response (organization, staff, academic, timetable, leave, enrollment…)
 export INSTITUTION_ID=$(curl -s -X POST "$BASE_URL/api/v1/institutions" \
   -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Content-Type: application/json' \
-  -d "{\"clusterId\":\"$CLUSTER_ID\",\"code\":\"INST-01\",\"name\":\"Dolphin Public School\",\"institutionType\":\"K12\"}" | jq -r '.')
+  -d "{\"clusterId\":\"$CLUSTER_ID\",\"code\":\"INST-01\",\"name\":\"Whale Public School\",\"institutionType\":\"K12\"}" | jq -r '.')
 
 # object response (fetch .id)
 export STUDENT_ID=$(curl -s -X POST "$BASE_URL/api/v1/students" \
@@ -288,10 +288,10 @@ curl -s -X PATCH "$BASE_URL/api/v1/users/$USER_ID/deactivate" -H "Authorization:
 
 ```bash
 curl -s -X POST "$BASE_URL/api/v1/enterprises" -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H 'Content-Type: application/json' -d '{"code":"DOLPHIN","name":"Dolphin Education Group"}'
+  -H 'Content-Type: application/json' -d '{"code":"DOLPHIN","name":"Whale Education Group"}'
 curl -s -X POST "$BASE_URL/api/v1/institutions" -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json' \
-  -d "{\"clusterId\":\"$CLUSTER_ID\",\"code\":\"INST-01\",\"name\":\"Dolphin Public School\",\"institutionType\":\"K12\"}"
+  -d "{\"clusterId\":\"$CLUSTER_ID\",\"code\":\"INST-01\",\"name\":\"Whale Public School\",\"institutionType\":\"K12\"}"
 curl -s "$BASE_URL/api/v1/regions/by-enterprise/$ENTERPRISE_ID" -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 

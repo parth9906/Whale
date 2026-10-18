@@ -1,7 +1,7 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.identity.repository.RolePermissionRepository;
-import com.school.dolphin.identity.repository.UserRoleRepository;
+import com.school.whale.identity.repository.RolePermissionRepository;
+import com.school.whale.identity.repository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

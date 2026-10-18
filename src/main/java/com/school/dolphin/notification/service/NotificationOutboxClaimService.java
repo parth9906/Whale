@@ -1,5 +1,5 @@
 
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

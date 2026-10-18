@@ -1,5 +1,5 @@
 
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
@@ -19,7 +19,7 @@ public record MarkAttendanceRequest(
 ) {
     public record StudentAttendanceEntry(
             @NotNull UUID studentId,
-            @NotNull com.school.dolphin.attendance.entity.AttendanceStatus status,
+            @NotNull com.school.whale.attendance.entity.AttendanceStatus status,
             @Size(max = 500) String remarks
     ) {}
 }

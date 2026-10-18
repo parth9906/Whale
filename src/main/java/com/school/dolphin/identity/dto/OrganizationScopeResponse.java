@@ -1,6 +1,6 @@
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
-import com.school.dolphin.identity.entity.OrganizationScopeType;
+import com.school.whale.identity.entity.OrganizationScopeType;
 
 import java.util.UUID;
 

@@ -1,6 +1,6 @@
-package com.school.dolphin.calendar.dto;
+package com.school.whale.calendar.dto;
 
-import com.school.dolphin.calendar.entity.CalendarEventType;
+import com.school.whale.calendar.entity.CalendarEventType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

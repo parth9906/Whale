@@ -1,12 +1,12 @@
-package com.school.dolphin.organization.service;
+package com.school.whale.organization.service;
 
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.organization.dto.CreateEnterpriseRequest;
-import com.school.dolphin.organization.dto.EnterpriseResponse;
-import com.school.dolphin.organization.entity.Enterprise;
-import com.school.dolphin.organization.repository.EnterpriseRepository;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.organization.dto.CreateEnterpriseRequest;
+import com.school.whale.organization.dto.EnterpriseResponse;
+import com.school.whale.organization.entity.Enterprise;
+import com.school.whale.organization.repository.EnterpriseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

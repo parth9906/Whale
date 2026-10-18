@@ -1,11 +1,11 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.dto.CreatePermissionRequest;
-import com.school.dolphin.identity.dto.PermissionResponse;
-import com.school.dolphin.identity.entity.Permission;
-import com.school.dolphin.identity.repository.PermissionRepository;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.dto.CreatePermissionRequest;
+import com.school.whale.identity.dto.PermissionResponse;
+import com.school.whale.identity.entity.Permission;
+import com.school.whale.identity.repository.PermissionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

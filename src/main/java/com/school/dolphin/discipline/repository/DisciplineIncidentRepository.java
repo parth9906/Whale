@@ -1,8 +1,8 @@
-package com.school.dolphin.discipline.repository;
+package com.school.whale.discipline.repository;
 
-import com.school.dolphin.discipline.entity.DisciplineIncident;
-import com.school.dolphin.discipline.entity.DisciplineIncidentStatus;
-import com.school.dolphin.discipline.entity.DisciplineSeverity;
+import com.school.whale.discipline.entity.DisciplineIncident;
+import com.school.whale.discipline.entity.DisciplineIncidentStatus;
+import com.school.whale.discipline.entity.DisciplineSeverity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

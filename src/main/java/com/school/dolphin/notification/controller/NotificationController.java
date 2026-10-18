@@ -1,8 +1,8 @@
 
-package com.school.dolphin.notification.controller;
+package com.school.whale.notification.controller;
 
-import com.school.dolphin.notification.dto.NotificationResponse;
-import com.school.dolphin.notification.service.NotificationService;
+import com.school.whale.notification.dto.NotificationResponse;
+import com.school.whale.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

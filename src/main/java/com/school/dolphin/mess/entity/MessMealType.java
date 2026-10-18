@@ -1,4 +1,4 @@
-package com.school.dolphin.mess.entity;
+package com.school.whale.mess.entity;
 
 public enum MessMealType {
     BREAKFAST,

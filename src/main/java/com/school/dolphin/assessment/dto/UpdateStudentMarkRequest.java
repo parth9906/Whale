@@ -1,4 +1,4 @@
-package com.school.dolphin.assessment.dto;
+package com.school.whale.assessment.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;

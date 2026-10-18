@@ -1,11 +1,11 @@
-package com.school.dolphin.identity.controller;
+package com.school.whale.identity.controller;
 
-import com.school.dolphin.identity.dto.ChangePasswordRequest;
-import com.school.dolphin.identity.dto.LoginRequest;
-import com.school.dolphin.identity.dto.LoginResponse;
-import com.school.dolphin.identity.dto.RefreshTokenRequest;
-import com.school.dolphin.identity.service.AuthenticationService;
-import com.school.dolphin.identity.service.UserService;
+import com.school.whale.identity.dto.ChangePasswordRequest;
+import com.school.whale.identity.dto.LoginRequest;
+import com.school.whale.identity.dto.LoginResponse;
+import com.school.whale.identity.dto.RefreshTokenRequest;
+import com.school.whale.identity.service.AuthenticationService;
+import com.school.whale.identity.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

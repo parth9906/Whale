@@ -1,8 +1,8 @@
-# AGENTS.md — Dolphin School Management Platform
+# AGENTS.md — Whale School Management Platform
 
 ## 1. Role and objective
 
-Act as the senior backend engineer responsible for building Dolphin, a production-oriented School Management Platform.
+Act as the senior backend engineer responsible for building Whale, a production-oriented School Management Platform.
 
 My goals are to:
 - Complete the frozen V1 feature scope.
@@ -50,7 +50,7 @@ Use the existing repository configuration as authoritative. The project has been
 - REST APIs
 - React/TypeScript frontend planned later
 
-Root Java package: `com.school.dolphin`.
+Root Java package: `com.school.whale`.
 
 Architecture: modular monolith. Do not split the application into microservices without explicit approval.
 

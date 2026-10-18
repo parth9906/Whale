@@ -1,12 +1,12 @@
-package com.school.dolphin.timetable.service;
+package com.school.whale.timetable.service;
 
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffMember;
-import com.school.dolphin.staff.entity.StaffType;
-import com.school.dolphin.staff.repository.StaffMemberRepository;
-import com.school.dolphin.timetable.repository.ScheduledLessonRepository;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffMember;
+import com.school.whale.staff.entity.StaffType;
+import com.school.whale.staff.repository.StaffMemberRepository;
+import com.school.whale.timetable.repository.ScheduledLessonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;

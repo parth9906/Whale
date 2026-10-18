@@ -1,7 +1,7 @@
-package com.school.dolphin.academic.repository;
+package com.school.whale.academic.repository;
 
-import com.school.dolphin.academic.entity.AcademicYear;
-import com.school.dolphin.academic.entity.AcademicYearStatus;
+import com.school.whale.academic.entity.AcademicYear;
+import com.school.whale.academic.entity.AcademicYearStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

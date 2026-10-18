@@ -1,7 +1,7 @@
-package com.school.dolphin.homework.repository;
+package com.school.whale.homework.repository;
 
-import com.school.dolphin.homework.entity.Assignment;
-import com.school.dolphin.homework.entity.AssignmentStatus;
+import com.school.whale.homework.entity.Assignment;
+import com.school.whale.homework.entity.AssignmentStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

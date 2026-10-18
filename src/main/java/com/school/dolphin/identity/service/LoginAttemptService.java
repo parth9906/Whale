@@ -1,6 +1,6 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.TooManyLoginAttemptsException;
+import com.school.whale.common.exception.TooManyLoginAttemptsException;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;

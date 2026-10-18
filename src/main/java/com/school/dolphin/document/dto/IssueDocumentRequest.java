@@ -1,4 +1,4 @@
-package com.school.dolphin.document.dto;
+package com.school.whale.document.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,18 +1,18 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.identity.dto.CreateUserRequest;
-import com.school.dolphin.identity.dto.ChangePasswordRequest;
-import com.school.dolphin.identity.dto.UpdateUserRequest;
-import com.school.dolphin.identity.dto.UserResponse;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.identity.repository.UserAccountRepository;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.student.repository.StudentRepository;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.identity.dto.CreateUserRequest;
+import com.school.whale.identity.dto.ChangePasswordRequest;
+import com.school.whale.identity.dto.UpdateUserRequest;
+import com.school.whale.identity.dto.UserResponse;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.identity.repository.UserAccountRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.student.entity.Student;
+import com.school.whale.student.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,9 +25,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
-import com.school.dolphin.identity.entity.Role;
-import com.school.dolphin.identity.repository.RoleRepository;
-import com.school.dolphin.identity.repository.UserRoleRepository;
+import com.school.whale.identity.entity.Role;
+import com.school.whale.identity.repository.RoleRepository;
+import com.school.whale.identity.repository.UserRoleRepository;
 
 @Service
 @RequiredArgsConstructor

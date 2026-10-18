@@ -1,8 +1,8 @@
-package com.school.dolphin.hostel.dto;
+package com.school.whale.hostel.dto;
 
-import com.school.dolphin.hostel.entity.HostelAllocation;
-import com.school.dolphin.hostel.entity.HostelAllocationStatus;
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.hostel.entity.HostelAllocation;
+import com.school.whale.hostel.entity.HostelAllocationStatus;
+import com.school.whale.student.entity.Student;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;

@@ -1,6 +1,6 @@
-package com.school.dolphin.leave.dto;
+package com.school.whale.leave.dto;
 
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.entity.LeaveRequestStatus;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;

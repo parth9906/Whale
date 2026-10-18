@@ -66,7 +66,7 @@ duplicate `code` returns `409 DUPLICATE_RESOURCE` (or `409 CONSTRAINT_VIOLATION`
 - Response `EnterpriseResponse`: `{ id, code, name, active }`.
 
 ```json
-{ "code": "DOLPHIN", "name": "Dolphin Education Group" }
+{ "code": "DOLPHIN", "name": "Whale Education Group" }
 ```
 
 ### POST /api/v1/regions

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dolphin
+    name: whale
   mail:
     host: ${SMTP_HOST:localhost}
     port: ${SMTP_PORT:1025}
@@ -39,7 +39,7 @@ logging:
   level:
     org.flywaydb: DEBUG
 
-dolphin:
+whale:
   security:
     jwt:
       # No default: the application fails fast (see JwtService) if JWT_SECRET is
@@ -50,8 +50,8 @@ dolphin:
       # next refresh, not on every request.
       expiration-ms: 900000
       refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:2592000000}
-      issuer: dolphin
-      audience: dolphin-api
+      issuer: whale
+      audience: whale-api
 
 app:
   notification:

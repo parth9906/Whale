@@ -1,27 +1,27 @@
 
-package com.school.dolphin.parent.service;
+package com.school.whale.parent.service;
 
-import com.school.dolphin.attendance.dto.AttendanceAlertResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceItemResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceSummaryResponse;
-import com.school.dolphin.attendance.entity.LessonAttendanceRecord;
-import com.school.dolphin.attendance.entity.LessonAttendanceStatus;
-import com.school.dolphin.attendance.repository.AttendanceAlertRepository;
-import com.school.dolphin.attendance.repository.AttendanceRepository;
-import com.school.dolphin.attendance.repository.LessonAttendanceRepository;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.guardian.entity.StudentGuardian;
-import com.school.dolphin.guardian.repository.StudentGuardianRepository;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.parent.dto.ParentAttendanceResponse;
-import com.school.dolphin.parent.dto.ParentPortalStudentResponse;
+import com.school.whale.attendance.dto.AttendanceAlertResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceItemResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceSummaryResponse;
+import com.school.whale.attendance.entity.LessonAttendanceRecord;
+import com.school.whale.attendance.entity.LessonAttendanceStatus;
+import com.school.whale.attendance.repository.AttendanceAlertRepository;
+import com.school.whale.attendance.repository.AttendanceRepository;
+import com.school.whale.attendance.repository.LessonAttendanceRepository;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.guardian.entity.StudentGuardian;
+import com.school.whale.guardian.repository.StudentGuardianRepository;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.parent.dto.ParentAttendanceResponse;
+import com.school.whale.parent.dto.ParentPortalStudentResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.school.dolphin.attendance.entity.AttendanceRecord;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
+import com.school.whale.attendance.entity.AttendanceRecord;
+import com.school.whale.common.exception.BusinessRuleViolationException;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

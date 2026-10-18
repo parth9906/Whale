@@ -1,9 +1,9 @@
 
-package com.school.dolphin.notification.controller;
+package com.school.whale.notification.controller;
 
-import com.school.dolphin.notification.dto.NotificationOutboxFailureResponse;
-import com.school.dolphin.notification.dto.NotificationOutboxSummaryResponse;
-import com.school.dolphin.notification.service.NotificationOutboxAdminService;
+import com.school.whale.notification.dto.NotificationOutboxFailureResponse;
+import com.school.whale.notification.dto.NotificationOutboxSummaryResponse;
+import com.school.whale.notification.service.NotificationOutboxAdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;

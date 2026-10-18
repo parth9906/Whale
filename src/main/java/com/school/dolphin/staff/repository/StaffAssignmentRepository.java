@@ -1,7 +1,7 @@
-package com.school.dolphin.staff.repository;
+package com.school.whale.staff.repository;
 
-import com.school.dolphin.staff.entity.StaffAssignment;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffAssignment;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.school.dolphin.common.response;
+package com.school.whale.common.response;
 
 import java.time.OffsetDateTime;
 

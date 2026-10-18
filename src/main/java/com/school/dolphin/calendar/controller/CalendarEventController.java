@@ -1,10 +1,10 @@
-package com.school.dolphin.calendar.controller;
+package com.school.whale.calendar.controller;
 
-import com.school.dolphin.calendar.dto.CalendarEventResponse;
-import com.school.dolphin.calendar.dto.CreateCalendarEventRequest;
-import com.school.dolphin.calendar.dto.UpdateCalendarEventRequest;
-import com.school.dolphin.calendar.entity.CalendarEventType;
-import com.school.dolphin.calendar.service.CalendarEventService;
+import com.school.whale.calendar.dto.CalendarEventResponse;
+import com.school.whale.calendar.dto.CreateCalendarEventRequest;
+import com.school.whale.calendar.dto.UpdateCalendarEventRequest;
+import com.school.whale.calendar.entity.CalendarEventType;
+import com.school.whale.calendar.service.CalendarEventService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

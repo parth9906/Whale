@@ -1,5 +1,5 @@
 
-package com.school.dolphin.notification.dto;
+package com.school.whale.notification.dto;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

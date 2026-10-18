@@ -1,4 +1,4 @@
-package com.school.dolphin.organization.dto;
+package com.school.whale.organization.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,8 +1,8 @@
 
-package com.school.dolphin.assessment.controller;
+package com.school.whale.assessment.controller;
 
-import com.school.dolphin.assessment.dto.*;
-import com.school.dolphin.assessment.service.AssessmentService;
+import com.school.whale.assessment.dto.*;
+import com.school.whale.assessment.service.AssessmentService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

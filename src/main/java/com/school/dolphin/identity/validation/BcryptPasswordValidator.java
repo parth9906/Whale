@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.validation;
+package com.school.whale.identity.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

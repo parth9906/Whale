@@ -1,9 +1,9 @@
-package com.school.dolphin.student.service;
+package com.school.whale.student.service;
 
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.student.repository.StudentAccountLinkRepository;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.student.entity.Student;
+import com.school.whale.student.repository.StudentAccountLinkRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

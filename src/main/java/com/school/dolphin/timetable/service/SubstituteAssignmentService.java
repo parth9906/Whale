@@ -1,33 +1,33 @@
-package com.school.dolphin.timetable.service;
+package com.school.whale.timetable.service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-import com.school.dolphin.academic.repository.TeacherSubjectAssignmentRepository;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.timetable.dto.LessonSubstituteAuditResponse;
+import com.school.whale.academic.repository.TeacherSubjectAssignmentRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.timetable.dto.LessonSubstituteAuditResponse;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.repository.StaffLeaveRequestRepository;
-import com.school.dolphin.staff.entity.StaffAssignment;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.repository.StaffAssignmentRepository;
-import com.school.dolphin.timetable.dto.AssignSubstituteRequest;
-import com.school.dolphin.timetable.dto.SubstituteAssignmentResponse;
-import com.school.dolphin.timetable.entity.LessonOccurrence;
-import com.school.dolphin.timetable.entity.LessonOccurrenceStatus;
-import com.school.dolphin.timetable.entity.LessonSubstituteAudit;
-import com.school.dolphin.timetable.repository.LessonOccurrenceRepository;
-import com.school.dolphin.timetable.repository.LessonSubstituteAuditRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.repository.StaffLeaveRequestRepository;
+import com.school.whale.staff.entity.StaffAssignment;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.repository.StaffAssignmentRepository;
+import com.school.whale.timetable.dto.AssignSubstituteRequest;
+import com.school.whale.timetable.dto.SubstituteAssignmentResponse;
+import com.school.whale.timetable.entity.LessonOccurrence;
+import com.school.whale.timetable.entity.LessonOccurrenceStatus;
+import com.school.whale.timetable.entity.LessonSubstituteAudit;
+import com.school.whale.timetable.repository.LessonOccurrenceRepository;
+import com.school.whale.timetable.repository.LessonSubstituteAuditRepository;
 
 import lombok.RequiredArgsConstructor;
 

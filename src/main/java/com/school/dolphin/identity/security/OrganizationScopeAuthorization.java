@@ -1,20 +1,20 @@
 
-package com.school.dolphin.identity.security;
+package com.school.whale.identity.security;
 
-import com.school.dolphin.identity.entity.UserOrganizationScope;
-import com.school.dolphin.identity.entity.OrganizationScopeType;
-import com.school.dolphin.identity.repository.UserOrganizationScopeRepository;
-import com.school.dolphin.organization.entity.Cluster;
-import com.school.dolphin.organization.entity.Enterprise;
-import com.school.dolphin.organization.entity.Campus;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.organization.entity.Region;
-import com.school.dolphin.organization.repository.ClusterRepository;
-import com.school.dolphin.organization.repository.CampusRepository;
-import com.school.dolphin.organization.repository.EnterpriseRepository;
-import com.school.dolphin.organization.repository.InstitutionRepository;
-import com.school.dolphin.organization.repository.RegionRepository;
-import com.school.dolphin.security.SecurityUtils;
+import com.school.whale.identity.entity.UserOrganizationScope;
+import com.school.whale.identity.entity.OrganizationScopeType;
+import com.school.whale.identity.repository.UserOrganizationScopeRepository;
+import com.school.whale.organization.entity.Cluster;
+import com.school.whale.organization.entity.Enterprise;
+import com.school.whale.organization.entity.Campus;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.organization.entity.Region;
+import com.school.whale.organization.repository.ClusterRepository;
+import com.school.whale.organization.repository.CampusRepository;
+import com.school.whale.organization.repository.EnterpriseRepository;
+import com.school.whale.organization.repository.InstitutionRepository;
+import com.school.whale.organization.repository.RegionRepository;
+import com.school.whale.security.SecurityUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,5 +1,5 @@
 
-package com.school.dolphin.guardian.service;
+package com.school.whale.guardian.service;
 
 import org.springframework.stereotype.Component;
 

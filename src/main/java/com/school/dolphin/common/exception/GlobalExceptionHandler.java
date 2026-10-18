@@ -1,6 +1,6 @@
-package com.school.dolphin.common.exception;
+package com.school.whale.common.exception;
 
-import com.school.dolphin.common.response.ErrorResponse;
+import com.school.whale.common.response.ErrorResponse;
 import jakarta.persistence.OptimisticLockException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.OptimisticLockingFailureException;

@@ -1,15 +1,15 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.Role;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.entity.UserRole;
-import com.school.dolphin.identity.entity.UserRoleId;
-import com.school.dolphin.identity.repository.RoleRepository;
-import com.school.dolphin.identity.repository.UserAccountRepository;
-import com.school.dolphin.identity.repository.UserRoleRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.Role;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserRole;
+import com.school.whale.identity.entity.UserRoleId;
+import com.school.whale.identity.repository.RoleRepository;
+import com.school.whale.identity.repository.UserAccountRepository;
+import com.school.whale.identity.repository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

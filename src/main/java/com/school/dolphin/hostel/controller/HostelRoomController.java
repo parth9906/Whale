@@ -1,10 +1,10 @@
-package com.school.dolphin.hostel.controller;
+package com.school.whale.hostel.controller;
 
-import com.school.dolphin.hostel.dto.CreateHostelRoomRequest;
-import com.school.dolphin.hostel.dto.HostelRoomResponse;
-import com.school.dolphin.hostel.dto.UpdateHostelRoomRequest;
-import com.school.dolphin.hostel.entity.HostelRoomType;
-import com.school.dolphin.hostel.service.HostelRoomService;
+import com.school.whale.hostel.dto.CreateHostelRoomRequest;
+import com.school.whale.hostel.dto.HostelRoomResponse;
+import com.school.whale.hostel.dto.UpdateHostelRoomRequest;
+import com.school.whale.hostel.entity.HostelRoomType;
+import com.school.whale.hostel.service.HostelRoomService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

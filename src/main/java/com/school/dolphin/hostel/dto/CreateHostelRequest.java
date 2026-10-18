@@ -1,6 +1,6 @@
-package com.school.dolphin.hostel.dto;
+package com.school.whale.hostel.dto;
 
-import com.school.dolphin.hostel.entity.HostelType;
+import com.school.whale.hostel.entity.HostelType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

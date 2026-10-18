@@ -1,13 +1,13 @@
-package com.school.dolphin.admissions.controller;
+package com.school.whale.admissions.controller;
 
-import com.school.dolphin.admissions.dto.AdmissionApplicationResponse;
-import com.school.dolphin.admissions.dto.AdmissionApplicationSummaryResponse;
-import com.school.dolphin.admissions.dto.CreateAdmissionApplicationRequest;
-import com.school.dolphin.admissions.dto.EnrollAdmissionApplicationRequest;
-import com.school.dolphin.admissions.dto.UpdateAdmissionApplicationRequest;
-import com.school.dolphin.admissions.dto.UpdateAdmissionApplicationStatusRequest;
-import com.school.dolphin.admissions.entity.AdmissionApplicationStatus;
-import com.school.dolphin.admissions.service.AdmissionApplicationService;
+import com.school.whale.admissions.dto.AdmissionApplicationResponse;
+import com.school.whale.admissions.dto.AdmissionApplicationSummaryResponse;
+import com.school.whale.admissions.dto.CreateAdmissionApplicationRequest;
+import com.school.whale.admissions.dto.EnrollAdmissionApplicationRequest;
+import com.school.whale.admissions.dto.UpdateAdmissionApplicationRequest;
+import com.school.whale.admissions.dto.UpdateAdmissionApplicationStatusRequest;
+import com.school.whale.admissions.entity.AdmissionApplicationStatus;
+import com.school.whale.admissions.service.AdmissionApplicationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

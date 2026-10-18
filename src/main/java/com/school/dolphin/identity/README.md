@@ -115,7 +115,7 @@ plus a long-lived refresh token.
 - Side effects: persists one `user_refresh_token` row (SHA-256 hash only).
 
 Access-token details: HS256; 15-minute lifetime
-(`dolphin.security.jwt.expiration-ms`); claims:
+(`whale.security.jwt.expiration-ms`); claims:
 
 | Claim | Meaning |
 |---|---|
@@ -123,7 +123,7 @@ Access-token details: HS256; 15-minute lifetime
 | `username` | login name |
 | `roles` | active role codes at issue time (e.g. `TEACHER`) |
 | `permissions` | effective permission codes across active roles only |
-| `iss` / `aud` | `dolphin` / `dolphin-api` (both required on parse) |
+| `iss` / `aud` | `whale` / `whale-api` (both required on parse) |
 | `iat` / `exp` | issued-at / expiry |
 | `jti` | unique token id |
 

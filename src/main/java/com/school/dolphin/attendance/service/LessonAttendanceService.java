@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.service;
+package com.school.whale.attendance.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,29 +12,29 @@ import java.util.UUID;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.school.dolphin.attendance.dto.*;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.attendance.dto.*;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.school.dolphin.academic.repository.StudentEnrollmentRepository;
-import com.school.dolphin.attendance.entity.LessonAttendanceAudit;
-import com.school.dolphin.attendance.entity.LessonAttendanceRecord;
-import com.school.dolphin.attendance.entity.LessonAttendanceStatus;
-import com.school.dolphin.attendance.repository.LessonAttendanceAuditRepository;
-import com.school.dolphin.attendance.repository.LessonAttendanceRepository;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.timetable.entity.LessonOccurrence;
-import com.school.dolphin.timetable.entity.LessonOccurrenceStatus;
-import com.school.dolphin.timetable.repository.LessonOccurrenceRepository;
-import com.school.dolphin.timetable.service.TeacherSectionAuthorization;
+import com.school.whale.academic.repository.StudentEnrollmentRepository;
+import com.school.whale.attendance.entity.LessonAttendanceAudit;
+import com.school.whale.attendance.entity.LessonAttendanceRecord;
+import com.school.whale.attendance.entity.LessonAttendanceStatus;
+import com.school.whale.attendance.repository.LessonAttendanceAuditRepository;
+import com.school.whale.attendance.repository.LessonAttendanceRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.student.entity.Student;
+import com.school.whale.timetable.entity.LessonOccurrence;
+import com.school.whale.timetable.entity.LessonOccurrenceStatus;
+import com.school.whale.timetable.repository.LessonOccurrenceRepository;
+import com.school.whale.timetable.service.TeacherSectionAuthorization;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,5 +1,5 @@
 
-package com.school.dolphin.staff.dto;
+package com.school.whale.staff.dto;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

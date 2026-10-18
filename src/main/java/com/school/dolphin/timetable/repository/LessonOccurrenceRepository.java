@@ -1,4 +1,4 @@
-package com.school.dolphin.timetable.repository;
+package com.school.whale.timetable.repository;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,8 +13,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.school.dolphin.timetable.entity.LessonOccurrence;
-import com.school.dolphin.timetable.entity.LessonOccurrenceStatus;
+import com.school.whale.timetable.entity.LessonOccurrence;
+import com.school.whale.timetable.entity.LessonOccurrenceStatus;
 
 public interface LessonOccurrenceRepository
         extends JpaRepository<LessonOccurrence, UUID> {

@@ -1,4 +1,4 @@
-package com.school.dolphin.inventory.entity;
+package com.school.whale.inventory.entity;
 
 public enum InventoryMovementDirection {
     IN,

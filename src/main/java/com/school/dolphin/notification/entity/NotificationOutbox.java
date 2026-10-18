@@ -1,5 +1,5 @@
 
-package com.school.dolphin.notification.entity;
+package com.school.whale.notification.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

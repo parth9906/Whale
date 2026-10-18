@@ -1,8 +1,8 @@
-package com.school.dolphin.identity.controller;
+package com.school.whale.identity.controller;
 
-import com.school.dolphin.identity.dto.CreatePermissionRequest;
-import com.school.dolphin.identity.dto.PermissionResponse;
-import com.school.dolphin.identity.service.PermissionService;
+import com.school.whale.identity.dto.CreatePermissionRequest;
+import com.school.whale.identity.dto.PermissionResponse;
+import com.school.whale.identity.service.PermissionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

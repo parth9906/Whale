@@ -1,4 +1,4 @@
-package com.school.dolphin.student.dto;
+package com.school.whale.student.dto;
 
 import jakarta.validation.constraints.NotNull;
 

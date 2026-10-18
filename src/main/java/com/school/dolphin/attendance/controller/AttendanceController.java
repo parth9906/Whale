@@ -1,8 +1,8 @@
 
-package com.school.dolphin.attendance.controller;
+package com.school.whale.attendance.controller;
 
-import com.school.dolphin.attendance.dto.*;
-import com.school.dolphin.attendance.service.AttendanceService;
+import com.school.whale.attendance.dto.*;
+import com.school.whale.attendance.service.AttendanceService;
 import jakarta.validation.Valid;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;

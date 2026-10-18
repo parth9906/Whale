@@ -1,4 +1,4 @@
-package com.school.dolphin.leave.entity;
+package com.school.whale.leave.entity;
 
 
 public enum LeaveRequestStatus {

@@ -1,5 +1,5 @@
 
-package com.school.dolphin.student.dto;
+package com.school.whale.student.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -1,7 +1,7 @@
-package com.school.dolphin.admissions.repository;
+package com.school.whale.admissions.repository;
 
-import com.school.dolphin.admissions.entity.AdmissionApplication;
-import com.school.dolphin.admissions.entity.AdmissionApplicationStatus;
+import com.school.whale.admissions.entity.AdmissionApplication;
+import com.school.whale.admissions.entity.AdmissionApplicationStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

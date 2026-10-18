@@ -1,29 +1,29 @@
-package com.school.dolphin.leave.service;
+package com.school.whale.leave.service;
 
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.repository.UserAccountRepository;
-import com.school.dolphin.identity.security.AuthenticatedUser;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.leave.dto.CreateStaffLeaveRequest;
-import com.school.dolphin.leave.dto.ReviewStaffLeaveRequest;
-import com.school.dolphin.leave.dto.StaffLeaveAuditResponse;
-import com.school.dolphin.leave.dto.StaffLeaveResponse;
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.entity.LeaveType;
-import com.school.dolphin.leave.entity.StaffLeaveAudit;
-import com.school.dolphin.leave.entity.StaffLeaveRequest;
-import com.school.dolphin.leave.repository.LeaveTypeRepository;
-import com.school.dolphin.leave.repository.StaffLeaveAuditRepository;
-import com.school.dolphin.leave.repository.StaffLeaveRequestRepository;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.staff.entity.StaffAssignment;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffMember;
-import com.school.dolphin.staff.repository.StaffAssignmentRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.repository.UserAccountRepository;
+import com.school.whale.identity.security.AuthenticatedUser;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.leave.dto.CreateStaffLeaveRequest;
+import com.school.whale.leave.dto.ReviewStaffLeaveRequest;
+import com.school.whale.leave.dto.StaffLeaveAuditResponse;
+import com.school.whale.leave.dto.StaffLeaveResponse;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.entity.LeaveType;
+import com.school.whale.leave.entity.StaffLeaveAudit;
+import com.school.whale.leave.entity.StaffLeaveRequest;
+import com.school.whale.leave.repository.LeaveTypeRepository;
+import com.school.whale.leave.repository.StaffLeaveAuditRepository;
+import com.school.whale.leave.repository.StaffLeaveRequestRepository;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.staff.entity.StaffAssignment;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffMember;
+import com.school.whale.staff.repository.StaffAssignmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -41,12 +41,12 @@ import java.util.UUID;
 import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.entity.StaffLeaveAudit;
-import com.school.dolphin.leave.entity.StaffLeaveRequest;
-import com.school.dolphin.identity.entity.UserAccount;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.entity.StaffLeaveAudit;
+import com.school.whale.leave.entity.StaffLeaveRequest;
+import com.school.whale.identity.entity.UserAccount;
 
 @Service
 @RequiredArgsConstructor

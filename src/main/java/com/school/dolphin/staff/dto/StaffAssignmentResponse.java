@@ -1,7 +1,7 @@
-package com.school.dolphin.staff.dto;
+package com.school.whale.staff.dto;
 
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffType;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffType;
 
 import java.time.LocalDate;
 import java.util.UUID;

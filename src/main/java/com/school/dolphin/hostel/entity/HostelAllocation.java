@@ -1,7 +1,7 @@
-package com.school.dolphin.hostel.entity;
+package com.school.whale.hostel.entity;
 
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.*;
 

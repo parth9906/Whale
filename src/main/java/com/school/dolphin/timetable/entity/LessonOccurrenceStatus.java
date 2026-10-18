@@ -1,4 +1,4 @@
-package com.school.dolphin.timetable.entity;
+package com.school.whale.timetable.entity;
 
 public enum LessonOccurrenceStatus {
     SCHEDULED,

@@ -1,7 +1,7 @@
-package com.school.dolphin.leave.entity;
+package com.school.whale.leave.entity;
 
 
-import com.school.dolphin.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserAccount;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

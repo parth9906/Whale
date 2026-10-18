@@ -1,4 +1,4 @@
-package com.school.dolphin;
+package com.school.whale;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

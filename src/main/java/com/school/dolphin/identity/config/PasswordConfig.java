@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.config;
+package com.school.whale.identity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

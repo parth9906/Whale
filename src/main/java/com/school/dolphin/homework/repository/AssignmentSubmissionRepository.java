@@ -1,6 +1,6 @@
-package com.school.dolphin.homework.repository;
+package com.school.whale.homework.repository;
 
-import com.school.dolphin.homework.entity.AssignmentSubmission;
+import com.school.whale.homework.entity.AssignmentSubmission;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;

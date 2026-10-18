@@ -1,8 +1,8 @@
-package com.school.dolphin.organization.controller;
+package com.school.whale.organization.controller;
 
-import com.school.dolphin.organization.dto.CreateRegionRequest;
-import com.school.dolphin.organization.dto.RegionResponse;
-import com.school.dolphin.organization.service.RegionService;
+import com.school.whale.organization.dto.CreateRegionRequest;
+import com.school.whale.organization.dto.RegionResponse;
+import com.school.whale.organization.service.RegionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

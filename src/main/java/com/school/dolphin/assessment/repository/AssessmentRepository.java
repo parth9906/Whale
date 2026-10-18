@@ -1,7 +1,7 @@
 
-package com.school.dolphin.assessment.repository;
+package com.school.whale.assessment.repository;
 
-import com.school.dolphin.assessment.entity.Assessment;
+import com.school.whale.assessment.entity.Assessment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -29,7 +29,7 @@ public interface AssessmentRepository
           AND (
                 :sectionId IS NULL
                 OR a.scopeType =
-                    com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+                    com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
                 OR a.section.id = :sectionId
                 OR a.schoolClass.id = (
                     SELECT cs.schoolClass.id
@@ -53,7 +53,7 @@ public interface AssessmentRepository
         WHERE a.institution.id = :institutionId
           AND a.active = true
           AND (
-                a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+                a.scopeType = com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
                 OR a.section.id IN :sectionIds
                 OR a.schoolClass.id IN (
                     SELECT cs.schoolClass.id

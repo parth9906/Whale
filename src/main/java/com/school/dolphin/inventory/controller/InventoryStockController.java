@@ -1,10 +1,10 @@
-package com.school.dolphin.inventory.controller;
+package com.school.whale.inventory.controller;
 
-import com.school.dolphin.inventory.dto.AdjustStockRequest;
-import com.school.dolphin.inventory.dto.InventoryStockMovementResponse;
-import com.school.dolphin.inventory.dto.RecordStockMovementRequest;
-import com.school.dolphin.inventory.entity.InventoryMovementType;
-import com.school.dolphin.inventory.service.InventoryStockService;
+import com.school.whale.inventory.dto.AdjustStockRequest;
+import com.school.whale.inventory.dto.InventoryStockMovementResponse;
+import com.school.whale.inventory.dto.RecordStockMovementRequest;
+import com.school.whale.inventory.entity.InventoryMovementType;
+import com.school.whale.inventory.service.InventoryStockService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -1,5 +1,5 @@
 
-package com.school.dolphin.identity.entity;
+package com.school.whale.identity.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

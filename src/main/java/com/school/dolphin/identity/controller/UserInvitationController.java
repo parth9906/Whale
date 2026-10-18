@@ -1,11 +1,11 @@
 
-package com.school.dolphin.identity.controller;
+package com.school.whale.identity.controller;
 
-import com.school.dolphin.identity.dto.AcceptUserInvitationRequest;
-import com.school.dolphin.identity.dto.AcceptUserInvitationResponse;
-import com.school.dolphin.identity.dto.CreateUserInvitationRequest;
-import com.school.dolphin.identity.dto.UserInvitationResponse;
-import com.school.dolphin.identity.service.UserInvitationService;
+import com.school.whale.identity.dto.AcceptUserInvitationRequest;
+import com.school.whale.identity.dto.AcceptUserInvitationResponse;
+import com.school.whale.identity.dto.CreateUserInvitationRequest;
+import com.school.whale.identity.dto.UserInvitationResponse;
+import com.school.whale.identity.service.UserInvitationService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

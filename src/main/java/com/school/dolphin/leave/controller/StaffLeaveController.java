@@ -1,13 +1,13 @@
-package com.school.dolphin.leave.controller;
+package com.school.whale.leave.controller;
 
-import com.school.dolphin.leave.dto.CreateStaffLeaveRequest;
-import com.school.dolphin.leave.dto.LeaveTypeResponse;
-import com.school.dolphin.leave.dto.ReviewStaffLeaveRequest;
-import com.school.dolphin.leave.dto.StaffLeaveAuditResponse;
-import com.school.dolphin.leave.dto.StaffLeaveResponse;
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.service.LeaveTypeService;
-import com.school.dolphin.leave.service.StaffLeaveService;
+import com.school.whale.leave.dto.CreateStaffLeaveRequest;
+import com.school.whale.leave.dto.LeaveTypeResponse;
+import com.school.whale.leave.dto.ReviewStaffLeaveRequest;
+import com.school.whale.leave.dto.StaffLeaveAuditResponse;
+import com.school.whale.leave.dto.StaffLeaveResponse;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.service.LeaveTypeService;
+import com.school.whale.leave.service.StaffLeaveService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

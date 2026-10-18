@@ -1,6 +1,6 @@
-package com.school.dolphin.mess.dto;
+package com.school.whale.mess.dto;
 
-import com.school.dolphin.mess.entity.MessMealType;
+import com.school.whale.mess.entity.MessMealType;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;

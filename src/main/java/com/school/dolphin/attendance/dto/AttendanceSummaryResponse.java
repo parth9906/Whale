@@ -1,5 +1,5 @@
 
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
 import java.time.LocalDate;
 import java.util.UUID;

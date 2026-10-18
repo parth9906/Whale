@@ -1,7 +1,7 @@
-package com.school.dolphin.inventory.repository;
+package com.school.whale.inventory.repository;
 
-import com.school.dolphin.inventory.entity.InventoryItem;
-import com.school.dolphin.inventory.entity.InventoryItemCategory;
+import com.school.whale.inventory.entity.InventoryItem;
+import com.school.whale.inventory.entity.InventoryItemCategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

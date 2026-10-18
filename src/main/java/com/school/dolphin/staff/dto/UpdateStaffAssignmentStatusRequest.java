@@ -1,6 +1,6 @@
-package com.school.dolphin.staff.dto;
+package com.school.whale.staff.dto;
 
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
 import jakarta.validation.constraints.NotNull;
 
 public record UpdateStaffAssignmentStatusRequest(

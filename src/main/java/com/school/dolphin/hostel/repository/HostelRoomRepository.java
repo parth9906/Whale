@@ -1,7 +1,7 @@
-package com.school.dolphin.hostel.repository;
+package com.school.whale.hostel.repository;
 
-import com.school.dolphin.hostel.entity.HostelRoom;
-import com.school.dolphin.hostel.entity.HostelRoomType;
+import com.school.whale.hostel.entity.HostelRoom;
+import com.school.whale.hostel.entity.HostelRoomType;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

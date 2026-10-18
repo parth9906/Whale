@@ -1,9 +1,9 @@
-package com.school.dolphin.inventory.dto;
+package com.school.whale.inventory.dto;
 
-import com.school.dolphin.inventory.entity.InventoryMovementDirection;
-import com.school.dolphin.inventory.entity.InventoryMovementType;
-import com.school.dolphin.inventory.entity.InventoryReferenceType;
-import com.school.dolphin.inventory.entity.InventoryStockMovement;
+import com.school.whale.inventory.entity.InventoryMovementDirection;
+import com.school.whale.inventory.entity.InventoryMovementType;
+import com.school.whale.inventory.entity.InventoryReferenceType;
+import com.school.whale.inventory.entity.InventoryStockMovement;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
 import java.util.UUID;
 

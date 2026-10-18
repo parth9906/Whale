@@ -1,4 +1,4 @@
-package com.school.dolphin.timetable.dto;
+package com.school.whale.timetable.dto;
 
 
 import jakarta.validation.constraints.Max;

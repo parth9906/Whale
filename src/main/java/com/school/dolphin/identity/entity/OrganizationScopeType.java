@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.entity;
+package com.school.whale.identity.entity;
 
 public enum OrganizationScopeType {
     ENTERPRISE,

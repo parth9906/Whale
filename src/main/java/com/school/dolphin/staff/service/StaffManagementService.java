@@ -1,24 +1,24 @@
 
-package com.school.dolphin.staff.service;
+package com.school.whale.staff.service;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.repository.UserAccountRepository;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.organization.entity.Campus;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.organization.repository.CampusRepository;
-import com.school.dolphin.organization.repository.InstitutionRepository;
-import com.school.dolphin.staff.dto.CreateStaffRequest;
-import com.school.dolphin.staff.dto.StaffAssignmentResponse;
-import com.school.dolphin.staff.dto.UpdateStaffAssignmentStatusRequest;
-import com.school.dolphin.staff.entity.StaffAssignment;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffMember;
-import com.school.dolphin.staff.repository.StaffAssignmentRepository;
-import com.school.dolphin.staff.repository.StaffMemberRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.repository.UserAccountRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.organization.entity.Campus;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.organization.repository.CampusRepository;
+import com.school.whale.organization.repository.InstitutionRepository;
+import com.school.whale.staff.dto.CreateStaffRequest;
+import com.school.whale.staff.dto.StaffAssignmentResponse;
+import com.school.whale.staff.dto.UpdateStaffAssignmentStatusRequest;
+import com.school.whale.staff.entity.StaffAssignment;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffMember;
+import com.school.whale.staff.repository.StaffAssignmentRepository;
+import com.school.whale.staff.repository.StaffMemberRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

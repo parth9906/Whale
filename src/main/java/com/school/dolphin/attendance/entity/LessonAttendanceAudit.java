@@ -1,9 +1,9 @@
-package com.school.dolphin.attendance.entity;
+package com.school.whale.attendance.entity;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import com.school.dolphin.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserAccount;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

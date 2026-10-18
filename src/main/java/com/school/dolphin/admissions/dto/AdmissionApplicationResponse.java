@@ -1,6 +1,6 @@
-package com.school.dolphin.admissions.dto;
+package com.school.whale.admissions.dto;
 
-import com.school.dolphin.admissions.entity.AdmissionApplicationStatus;
+import com.school.whale.admissions.entity.AdmissionApplicationStatus;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;

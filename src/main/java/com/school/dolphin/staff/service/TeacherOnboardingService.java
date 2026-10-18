@@ -1,25 +1,25 @@
 
-package com.school.dolphin.staff.service;
+package com.school.whale.staff.service;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.dto.CreateUserInvitationRequest;
-import com.school.dolphin.identity.dto.UserInvitationResponse;
-import com.school.dolphin.identity.entity.OrganizationScopeType;
-import com.school.dolphin.identity.entity.Role;
-import com.school.dolphin.identity.repository.RoleRepository;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.identity.service.UserInvitationService;
-import com.school.dolphin.organization.entity.Campus;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.organization.repository.CampusRepository;
-import com.school.dolphin.organization.repository.InstitutionRepository;
-import com.school.dolphin.staff.dto.CreateStaffRequest;
-import com.school.dolphin.staff.dto.StaffAssignmentResponse;
-import com.school.dolphin.staff.dto.OnboardTeacherRequest;
-import com.school.dolphin.staff.dto.TeacherOnboardingResponse;
-import com.school.dolphin.staff.entity.StaffType;
-import com.school.dolphin.staff.repository.StaffMemberRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.dto.CreateUserInvitationRequest;
+import com.school.whale.identity.dto.UserInvitationResponse;
+import com.school.whale.identity.entity.OrganizationScopeType;
+import com.school.whale.identity.entity.Role;
+import com.school.whale.identity.repository.RoleRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.identity.service.UserInvitationService;
+import com.school.whale.organization.entity.Campus;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.organization.repository.CampusRepository;
+import com.school.whale.organization.repository.InstitutionRepository;
+import com.school.whale.staff.dto.CreateStaffRequest;
+import com.school.whale.staff.dto.StaffAssignmentResponse;
+import com.school.whale.staff.dto.OnboardTeacherRequest;
+import com.school.whale.staff.dto.TeacherOnboardingResponse;
+import com.school.whale.staff.entity.StaffType;
+import com.school.whale.staff.repository.StaffMemberRepository;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

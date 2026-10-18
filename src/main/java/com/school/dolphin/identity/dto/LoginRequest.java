@@ -1,6 +1,6 @@
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
-import com.school.dolphin.identity.validation.BcryptPassword;
+import com.school.whale.identity.validation.BcryptPassword;
 import jakarta.validation.constraints.NotBlank;
 
 public record LoginRequest(

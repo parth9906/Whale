@@ -1,7 +1,7 @@
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
-import com.school.dolphin.notification.entity.NotificationOutbox;
-import com.school.dolphin.notification.repository.NotificationOutboxRepository;
+import com.school.whale.notification.entity.NotificationOutbox;
+import com.school.whale.notification.repository.NotificationOutboxRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

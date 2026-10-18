@@ -1,4 +1,4 @@
-package com.school.dolphin.leave.dto;
+package com.school.whale.leave.dto;
 
 import java.util.UUID;
 

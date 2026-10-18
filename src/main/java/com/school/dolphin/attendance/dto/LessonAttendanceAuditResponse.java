@@ -1,9 +1,9 @@
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import com.school.dolphin.attendance.entity.LessonAttendanceStatus;
+import com.school.whale.attendance.entity.LessonAttendanceStatus;
 
 public record LessonAttendanceAuditResponse(
         UUID id,

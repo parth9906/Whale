@@ -1,18 +1,18 @@
-package com.school.dolphin.assessment.service;
+package com.school.whale.assessment.service;
 
-import com.school.dolphin.assessment.dto.AssessmentResultItem;
-import com.school.dolphin.assessment.dto.StudentReportCardResponse;
-import com.school.dolphin.assessment.dto.SubjectResultResponse;
-import com.school.dolphin.assessment.entity.StudentMark;
-import com.school.dolphin.assessment.repository.StudentMarkRepository;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.student.repository.StudentRepository;
-import com.school.dolphin.student.service.StudentSectionResolver;
-import com.school.dolphin.timetable.service.TeacherSectionAuthorization;
-import com.school.dolphin.student.service.CurrentStudentResolver;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
+import com.school.whale.assessment.dto.AssessmentResultItem;
+import com.school.whale.assessment.dto.StudentReportCardResponse;
+import com.school.whale.assessment.dto.SubjectResultResponse;
+import com.school.whale.assessment.entity.StudentMark;
+import com.school.whale.assessment.repository.StudentMarkRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.student.entity.Student;
+import com.school.whale.student.repository.StudentRepository;
+import com.school.whale.student.service.StudentSectionResolver;
+import com.school.whale.timetable.service.TeacherSectionAuthorization;
+import com.school.whale.student.service.CurrentStudentResolver;
+import com.school.whale.common.exception.ResourceNotFoundException;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

@@ -1,9 +1,9 @@
-package com.school.dolphin.leave.service;
+package com.school.whale.leave.service;
 
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.leave.dto.LeaveTypeResponse;
-import com.school.dolphin.leave.entity.LeaveType;
-import com.school.dolphin.leave.repository.LeaveTypeRepository;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.leave.dto.LeaveTypeResponse;
+import com.school.whale.leave.entity.LeaveType;
+import com.school.whale.leave.repository.LeaveTypeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

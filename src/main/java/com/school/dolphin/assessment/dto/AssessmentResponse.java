@@ -1,7 +1,7 @@
 
-package com.school.dolphin.assessment.dto;
+package com.school.whale.assessment.dto;
 
-import com.school.dolphin.assessment.entity.AssessmentScope;
+import com.school.whale.assessment.entity.AssessmentScope;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

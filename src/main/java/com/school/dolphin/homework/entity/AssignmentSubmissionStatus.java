@@ -1,4 +1,4 @@
-package com.school.dolphin.homework.entity;
+package com.school.whale.homework.entity;
 
 public enum AssignmentSubmissionStatus {
     SUBMITTED,

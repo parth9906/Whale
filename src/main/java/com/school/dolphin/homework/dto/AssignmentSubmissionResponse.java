@@ -1,7 +1,7 @@
-package com.school.dolphin.homework.dto;
+package com.school.whale.homework.dto;
 
-import com.school.dolphin.homework.entity.AssignmentSubmission;
-import com.school.dolphin.homework.entity.AssignmentSubmissionStatus;
+import com.school.whale.homework.entity.AssignmentSubmission;
+import com.school.whale.homework.entity.AssignmentSubmissionStatus;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

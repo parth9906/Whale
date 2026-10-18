@@ -1,10 +1,10 @@
-package com.school.dolphin.document.controller;
+package com.school.whale.document.controller;
 
-import com.school.dolphin.document.dto.CreateDocumentTemplateRequest;
-import com.school.dolphin.document.dto.DocumentTemplateResponse;
-import com.school.dolphin.document.dto.IssueDocumentRequest;
-import com.school.dolphin.document.dto.IssuedDocumentResponse;
-import com.school.dolphin.document.service.DocumentService;
+import com.school.whale.document.dto.CreateDocumentTemplateRequest;
+import com.school.whale.document.dto.DocumentTemplateResponse;
+import com.school.whale.document.dto.IssueDocumentRequest;
+import com.school.whale.document.dto.IssuedDocumentResponse;
+import com.school.whale.document.service.DocumentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.school.dolphin.calendar.entity;
+package com.school.whale.calendar.entity;
 
 public enum CalendarEventType {
     HOLIDAY,

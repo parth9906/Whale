@@ -1,7 +1,7 @@
 
-package com.school.dolphin.identity.repository;
+package com.school.whale.identity.repository;
 
-import com.school.dolphin.identity.entity.UserInvitationScope;
+import com.school.whale.identity.entity.UserInvitationScope;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

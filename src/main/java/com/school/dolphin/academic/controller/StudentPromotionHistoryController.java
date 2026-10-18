@@ -1,7 +1,7 @@
-package com.school.dolphin.academic.controller;
+package com.school.whale.academic.controller;
 
-import com.school.dolphin.academic.dto.StudentPromotionHistoryResponse;
-import com.school.dolphin.academic.service.StudentPromotionService;
+import com.school.whale.academic.dto.StudentPromotionHistoryResponse;
+import com.school.whale.academic.service.StudentPromotionService;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;

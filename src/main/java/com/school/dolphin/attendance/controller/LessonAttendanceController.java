@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.controller;
+package com.school.whale.attendance.controller;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.dolphin.attendance.dto.CorrectLessonAttendanceRequest;
-import com.school.dolphin.attendance.dto.LessonAttendanceAuditResponse;
-import com.school.dolphin.attendance.dto.LessonAttendanceResponse;
-import com.school.dolphin.attendance.dto.LessonAttendanceRosterItemResponse;
-import com.school.dolphin.attendance.dto.MarkLessonAttendanceRequest;
-import com.school.dolphin.attendance.service.LessonAttendanceService;
+import com.school.whale.attendance.dto.CorrectLessonAttendanceRequest;
+import com.school.whale.attendance.dto.LessonAttendanceAuditResponse;
+import com.school.whale.attendance.dto.LessonAttendanceResponse;
+import com.school.whale.attendance.dto.LessonAttendanceRosterItemResponse;
+import com.school.whale.attendance.dto.MarkLessonAttendanceRequest;
+import com.school.whale.attendance.service.LessonAttendanceService;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.school.dolphin.attendance.dto.AttendanceGroupAnalyticsResponse;
-import com.school.dolphin.attendance.dto.StudentAttendanceAnalyticsResponse;
+import com.school.whale.attendance.dto.AttendanceGroupAnalyticsResponse;
+import com.school.whale.attendance.dto.StudentAttendanceAnalyticsResponse;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

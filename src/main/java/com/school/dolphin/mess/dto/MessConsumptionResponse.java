@@ -1,6 +1,6 @@
-package com.school.dolphin.mess.dto;
+package com.school.whale.mess.dto;
 
-import com.school.dolphin.inventory.entity.InventoryUnit;
+import com.school.whale.inventory.entity.InventoryUnit;
 
 import java.math.BigDecimal;
 import java.util.UUID;

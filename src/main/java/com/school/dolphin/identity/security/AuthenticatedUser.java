@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.security;
+package com.school.whale.identity.security;
 
 import java.util.UUID;
 

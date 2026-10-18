@@ -1,6 +1,6 @@
-package com.school.dolphin.student.dto;
+package com.school.whale.student.dto;
 
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.student.entity.Student;
 
 import java.time.LocalDate;
 import java.util.UUID;

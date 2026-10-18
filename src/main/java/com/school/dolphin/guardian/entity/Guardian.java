@@ -1,8 +1,8 @@
 
-package com.school.dolphin.guardian.entity;
+package com.school.whale.guardian.entity;
 
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.identity.entity.UserAccount;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.identity.entity.UserAccount;
 import jakarta.persistence.*;
 import lombok.*;
 

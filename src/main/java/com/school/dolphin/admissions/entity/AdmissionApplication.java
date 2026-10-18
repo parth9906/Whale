@@ -1,10 +1,10 @@
-package com.school.dolphin.admissions.entity;
+package com.school.whale.admissions.entity;
 
-import com.school.dolphin.academic.entity.SchoolClass;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.organization.entity.Campus;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.academic.entity.SchoolClass;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.organization.entity.Campus;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.*;
 

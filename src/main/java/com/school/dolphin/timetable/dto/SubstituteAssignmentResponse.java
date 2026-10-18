@@ -1,11 +1,11 @@
-package com.school.dolphin.timetable.dto;
+package com.school.whale.timetable.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import com.school.dolphin.timetable.entity.LessonOccurrenceStatus;
+import com.school.whale.timetable.entity.LessonOccurrenceStatus;
 
 public record SubstituteAssignmentResponse(
         UUID occurrenceId,

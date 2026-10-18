@@ -1,6 +1,6 @@
-package com.school.dolphin.mess.repository;
+package com.school.whale.mess.repository;
 
-import com.school.dolphin.mess.entity.MessMealRecord;
+import com.school.whale.mess.entity.MessMealRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

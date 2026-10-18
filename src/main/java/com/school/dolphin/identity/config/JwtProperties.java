@@ -1,8 +1,8 @@
-package com.school.dolphin.identity.config;
+package com.school.whale.identity.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "dolphin.security.jwt")
+@ConfigurationProperties(prefix = "whale.security.jwt")
 public record JwtProperties(
         String secret,
         long expirationMs,
@@ -17,11 +17,11 @@ public record JwtProperties(
     public JwtProperties {
 
         if (issuer == null || issuer.isBlank()) {
-            issuer = "dolphin";
+            issuer = "whale";
         }
 
         if (audience == null || audience.isBlank()) {
-            audience = "dolphin-api";
+            audience = "whale-api";
         }
 
         if (refreshExpirationMs <= 0) {

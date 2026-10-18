@@ -1,15 +1,15 @@
-package com.school.dolphin.academic.service;
+package com.school.whale.academic.service;
 
-import com.school.dolphin.academic.dto.*;
-import com.school.dolphin.academic.entity.*;
-import com.school.dolphin.academic.repository.*;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.DuplicateResourceException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.academic.dto.*;
+import com.school.whale.academic.entity.*;
+import com.school.whale.academic.repository.*;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.DuplicateResourceException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
 
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.student.repository.StudentRepository;
+import com.school.whale.student.entity.Student;
+import com.school.whale.student.repository.StudentRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;

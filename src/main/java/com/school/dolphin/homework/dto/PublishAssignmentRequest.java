@@ -1,4 +1,4 @@
-package com.school.dolphin.homework.dto;
+package com.school.whale.homework.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;

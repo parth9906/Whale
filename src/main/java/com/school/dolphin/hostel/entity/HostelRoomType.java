@@ -1,4 +1,4 @@
-package com.school.dolphin.hostel.entity;
+package com.school.whale.hostel.entity;
 
 public enum HostelRoomType {
     SINGLE,

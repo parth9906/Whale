@@ -1,8 +1,8 @@
 
-package com.school.dolphin.assessment.repository;
+package com.school.whale.assessment.repository;
 
-import com.school.dolphin.assessment.dto.AssessmentRosterItem;
-import com.school.dolphin.assessment.entity.StudentMark;
+import com.school.whale.assessment.dto.AssessmentRosterItem;
+import com.school.whale.assessment.entity.StudentMark;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -48,7 +48,7 @@ public interface StudentMarkRepository
 
     @Query(
             value = """
-        SELECT DISTINCT new com.school.dolphin.assessment.dto.AssessmentRosterItem(
+        SELECT DISTINCT new com.school.whale.assessment.dto.AssessmentRosterItem(
             s.id,
             s.admissionNumber,
             s.firstName,
@@ -75,13 +75,13 @@ public interface StudentMarkRepository
           AND cs.schoolClass.active = true
           AND cs.schoolClass.academicYear.institution.id = a.institution.id
           AND (
-              a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+              a.scopeType = com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.CLASS
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.CLASS
                   AND cs.schoolClass.id = a.schoolClass.id
               )
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.SECTION
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.SECTION
                   AND cs.id = a.section.id
               )
           )
@@ -101,13 +101,13 @@ public interface StudentMarkRepository
           AND cs.schoolClass.active = true
           AND cs.schoolClass.academicYear.institution.id = a.institution.id
           AND (
-              a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+              a.scopeType = com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.CLASS
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.CLASS
                   AND cs.schoolClass.id = a.schoolClass.id
               )
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.SECTION
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.SECTION
                   AND cs.id = a.section.id
               )
           )
@@ -119,7 +119,7 @@ public interface StudentMarkRepository
 
     @Query(
             value = """
-        SELECT DISTINCT new com.school.dolphin.assessment.dto.AssessmentRosterItem(
+        SELECT DISTINCT new com.school.whale.assessment.dto.AssessmentRosterItem(
             s.id,
             s.admissionNumber,
             s.firstName,
@@ -147,13 +147,13 @@ public interface StudentMarkRepository
           AND cs.schoolClass.academicYear.institution.id = a.institution.id
           AND cs.id IN :allowedSectionIds
           AND (
-              a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+              a.scopeType = com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.CLASS
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.CLASS
                   AND cs.schoolClass.id = a.schoolClass.id
               )
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.SECTION
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.SECTION
                   AND cs.id = a.section.id
               )
           )
@@ -174,13 +174,13 @@ public interface StudentMarkRepository
           AND cs.schoolClass.academicYear.institution.id = a.institution.id
           AND cs.id IN :allowedSectionIds
           AND (
-              a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.INSTITUTION
+              a.scopeType = com.school.whale.assessment.entity.AssessmentScope.INSTITUTION
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.CLASS
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.CLASS
                   AND cs.schoolClass.id = a.schoolClass.id
               )
               OR (
-                  a.scopeType = com.school.dolphin.assessment.entity.AssessmentScope.SECTION
+                  a.scopeType = com.school.whale.assessment.entity.AssessmentScope.SECTION
                   AND cs.id = a.section.id
               )
           )

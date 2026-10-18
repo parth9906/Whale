@@ -1,7 +1,7 @@
-package com.school.dolphin.discipline.dto;
+package com.school.whale.discipline.dto;
 
-import com.school.dolphin.discipline.entity.DisciplineCategory;
-import com.school.dolphin.discipline.entity.DisciplineSeverity;
+import com.school.whale.discipline.entity.DisciplineCategory;
+import com.school.whale.discipline.entity.DisciplineSeverity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;

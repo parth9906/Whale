@@ -1,7 +1,7 @@
 
-package com.school.dolphin.assessment.repository;
+package com.school.whale.assessment.repository;
 
-import com.school.dolphin.assessment.entity.StudentMarkAudit;
+import com.school.whale.assessment.entity.StudentMarkAudit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

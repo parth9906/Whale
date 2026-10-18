@@ -1,6 +1,6 @@
-package com.school.dolphin.student.repository;
+package com.school.whale.student.repository;
 
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.student.entity.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

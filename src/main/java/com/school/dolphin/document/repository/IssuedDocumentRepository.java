@@ -1,6 +1,6 @@
-package com.school.dolphin.document.repository;
+package com.school.whale.document.repository;
 
-import com.school.dolphin.document.entity.IssuedDocument;
+import com.school.whale.document.entity.IssuedDocument;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

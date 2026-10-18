@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

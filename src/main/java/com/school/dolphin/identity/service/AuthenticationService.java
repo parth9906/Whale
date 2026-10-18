@@ -1,16 +1,16 @@
 
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.common.exception.InvalidCredentialsException;
-import com.school.dolphin.common.exception.InvalidRefreshTokenException;
-import com.school.dolphin.identity.config.JwtProperties;
-import com.school.dolphin.identity.dto.AccessContextResponse;
-import com.school.dolphin.identity.dto.LoginRequest;
-import com.school.dolphin.identity.dto.LoginResponse;
-import com.school.dolphin.identity.dto.RefreshTokenRequest;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.entity.UserRefreshToken;
-import com.school.dolphin.identity.repository.UserAccountRepository;
+import com.school.whale.common.exception.InvalidCredentialsException;
+import com.school.whale.common.exception.InvalidRefreshTokenException;
+import com.school.whale.identity.config.JwtProperties;
+import com.school.whale.identity.dto.AccessContextResponse;
+import com.school.whale.identity.dto.LoginRequest;
+import com.school.whale.identity.dto.LoginResponse;
+import com.school.whale.identity.dto.RefreshTokenRequest;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserRefreshToken;
+import com.school.whale.identity.repository.UserAccountRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,7 +54,7 @@ public class AuthenticationService {
         this.accessContextService = accessContextService;
         this.refreshTokenService = refreshTokenService;
         this.dummyPasswordHash = passwordEncoder.encode(
-                "dolphin-nonexistent-account-timing-guard");
+                "whale-nonexistent-account-timing-guard");
     }
 
     @Transactional

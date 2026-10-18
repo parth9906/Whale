@@ -1,7 +1,7 @@
-package com.school.dolphin.calendar.repository;
+package com.school.whale.calendar.repository;
 
-import com.school.dolphin.calendar.entity.CalendarEvent;
-import com.school.dolphin.calendar.entity.CalendarEventType;
+import com.school.whale.calendar.entity.CalendarEvent;
+import com.school.whale.calendar.entity.CalendarEventType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

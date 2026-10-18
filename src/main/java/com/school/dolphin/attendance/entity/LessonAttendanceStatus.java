@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.entity;
+package com.school.whale.attendance.entity;
 
 public enum LessonAttendanceStatus {
     PRESENT,

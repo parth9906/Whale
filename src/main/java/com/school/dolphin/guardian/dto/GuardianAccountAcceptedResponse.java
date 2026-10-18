@@ -1,5 +1,5 @@
 
-package com.school.dolphin.guardian.dto;
+package com.school.whale.guardian.dto;
 
 import java.util.UUID;
 

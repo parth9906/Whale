@@ -1,6 +1,6 @@
-package com.school.dolphin.academic.repository;
+package com.school.whale.academic.repository;
 
-import com.school.dolphin.academic.entity.TeacherSubjectAssignment;
+import com.school.whale.academic.entity.TeacherSubjectAssignment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

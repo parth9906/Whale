@@ -1,4 +1,4 @@
-package com.school.dolphin.discipline.entity;
+package com.school.whale.discipline.entity;
 
 public enum DisciplineIncidentStatus {
     OPEN,

@@ -1,8 +1,8 @@
-package com.school.dolphin.document.entity;
+package com.school.whale.document.entity;
 
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.organization.entity.Institution;
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.organization.entity.Institution;
+import com.school.whale.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

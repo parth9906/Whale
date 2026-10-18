@@ -1,7 +1,7 @@
 
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
-import com.school.dolphin.identity.entity.OrganizationScopeType;
+import com.school.whale.identity.entity.OrganizationScopeType;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

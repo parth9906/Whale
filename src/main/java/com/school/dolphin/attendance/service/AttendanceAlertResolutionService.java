@@ -1,17 +1,17 @@
 
-package com.school.dolphin.attendance.service;
+package com.school.whale.attendance.service;
 
-import com.school.dolphin.attendance.dto.AttendanceAlertAdminResponse;
-import com.school.dolphin.attendance.dto.AttendanceAlertAuditResponse;
-import com.school.dolphin.attendance.entity.AttendanceAlert;
-import com.school.dolphin.attendance.entity.AttendanceAlertAudit;
-import com.school.dolphin.attendance.repository.AttendanceAlertAuditRepository;
-import com.school.dolphin.attendance.repository.AttendanceAlertRepository;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.attendance.dto.AttendanceAlertAdminResponse;
+import com.school.whale.attendance.dto.AttendanceAlertAuditResponse;
+import com.school.whale.attendance.entity.AttendanceAlert;
+import com.school.whale.attendance.entity.AttendanceAlertAudit;
+import com.school.whale.attendance.repository.AttendanceAlertAuditRepository;
+import com.school.whale.attendance.repository.AttendanceAlertRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

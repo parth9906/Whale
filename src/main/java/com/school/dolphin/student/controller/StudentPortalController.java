@@ -1,7 +1,7 @@
-package com.school.dolphin.student.controller;
+package com.school.whale.student.controller;
 
-import com.school.dolphin.student.dto.StudentResponse;
-import com.school.dolphin.student.service.StudentPortalService;
+import com.school.whale.student.dto.StudentResponse;
+import com.school.whale.student.service.StudentPortalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;

@@ -1,7 +1,7 @@
-package com.school.dolphin.identity.controller;
+package com.school.whale.identity.controller;
 
-import com.school.dolphin.identity.dto.AccessContextResponse;
-import com.school.dolphin.identity.service.AccessContextService;
+import com.school.whale.identity.dto.AccessContextResponse;
+import com.school.whale.identity.service.AccessContextService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;

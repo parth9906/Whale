@@ -1,6 +1,6 @@
-package com.school.dolphin.academic.entity;
+package com.school.whale.academic.entity;
 
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,7 @@
 
-package com.school.dolphin.parent.dto;
+package com.school.whale.parent.dto;
 
-import com.school.dolphin.attendance.entity.AttendanceStatus;
+import com.school.whale.attendance.entity.AttendanceStatus;
 
 import java.time.LocalDate;
 import java.util.UUID;

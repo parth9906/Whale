@@ -1,7 +1,7 @@
-package com.school.dolphin.leave.repository;
+package com.school.whale.leave.repository;
 
 
-import com.school.dolphin.leave.entity.StaffLeaveAudit;
+import com.school.whale.leave.entity.StaffLeaveAudit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

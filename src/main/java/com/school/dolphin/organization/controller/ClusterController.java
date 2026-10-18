@@ -1,8 +1,8 @@
-package com.school.dolphin.organization.controller;
+package com.school.whale.organization.controller;
 
-import com.school.dolphin.organization.dto.ClusterResponse;
-import com.school.dolphin.organization.dto.CreateClusterRequest;
-import com.school.dolphin.organization.service.ClusterService;
+import com.school.whale.organization.dto.ClusterResponse;
+import com.school.whale.organization.dto.CreateClusterRequest;
+import com.school.whale.organization.service.ClusterService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

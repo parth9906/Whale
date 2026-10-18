@@ -1,7 +1,7 @@
-package com.school.dolphin.leave.repository;
+package com.school.whale.leave.repository;
 
-import com.school.dolphin.leave.entity.LeaveRequestStatus;
-import com.school.dolphin.leave.entity.StudentLeaveRequest;
+import com.school.whale.leave.entity.LeaveRequestStatus;
+import com.school.whale.leave.entity.StudentLeaveRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

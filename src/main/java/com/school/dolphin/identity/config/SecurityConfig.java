@@ -1,6 +1,6 @@
-package com.school.dolphin.identity.config;
+package com.school.whale.identity.config;
 
-import com.school.dolphin.identity.security.JwtAuthenticationFilter;
+import com.school.whale.identity.security.JwtAuthenticationFilter;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

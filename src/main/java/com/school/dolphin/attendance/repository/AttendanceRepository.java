@@ -1,7 +1,7 @@
 
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
-import com.school.dolphin.attendance.entity.AttendanceRecord;
+import com.school.whale.attendance.entity.AttendanceRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

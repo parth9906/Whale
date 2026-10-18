@@ -1,8 +1,8 @@
 
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
-import com.school.dolphin.attendance.entity.AttendanceAlert;
-import com.school.dolphin.attendance.entity.AttendanceAlertAudit;
+import com.school.whale.attendance.entity.AttendanceAlert;
+import com.school.whale.attendance.entity.AttendanceAlertAudit;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

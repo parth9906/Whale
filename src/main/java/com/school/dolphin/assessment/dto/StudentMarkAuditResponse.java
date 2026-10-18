@@ -1,5 +1,5 @@
 
-package com.school.dolphin.assessment.dto;
+package com.school.whale.assessment.dto;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

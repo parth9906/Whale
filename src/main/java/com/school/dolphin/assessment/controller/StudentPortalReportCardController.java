@@ -1,7 +1,7 @@
-package com.school.dolphin.assessment.controller;
+package com.school.whale.assessment.controller;
 
-import com.school.dolphin.assessment.dto.StudentReportCardResponse;
-import com.school.dolphin.assessment.service.StudentReportCardService;
+import com.school.whale.assessment.dto.StudentReportCardResponse;
+import com.school.whale.assessment.service.StudentReportCardService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

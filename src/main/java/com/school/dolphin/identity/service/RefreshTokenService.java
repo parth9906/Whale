@@ -1,9 +1,9 @@
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.identity.config.JwtProperties;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.entity.UserRefreshToken;
-import com.school.dolphin.identity.repository.UserRefreshTokenRepository;
+import com.school.whale.identity.config.JwtProperties;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserRefreshToken;
+import com.school.whale.identity.repository.UserRefreshTokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

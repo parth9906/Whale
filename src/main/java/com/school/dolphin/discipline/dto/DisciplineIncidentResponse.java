@@ -1,8 +1,8 @@
-package com.school.dolphin.discipline.dto;
+package com.school.whale.discipline.dto;
 
-import com.school.dolphin.discipline.entity.DisciplineCategory;
-import com.school.dolphin.discipline.entity.DisciplineIncidentStatus;
-import com.school.dolphin.discipline.entity.DisciplineSeverity;
+import com.school.whale.discipline.entity.DisciplineCategory;
+import com.school.whale.discipline.entity.DisciplineIncidentStatus;
+import com.school.whale.discipline.entity.DisciplineSeverity;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;

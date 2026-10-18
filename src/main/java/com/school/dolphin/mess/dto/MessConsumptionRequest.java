@@ -1,4 +1,4 @@
-package com.school.dolphin.mess.dto;
+package com.school.whale.mess.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;

@@ -1,11 +1,11 @@
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.school.dolphin.attendance.entity.LessonAttendanceAudit;
+import com.school.whale.attendance.entity.LessonAttendanceAudit;
 
 public interface LessonAttendanceAuditRepository
         extends JpaRepository<LessonAttendanceAudit, UUID> {

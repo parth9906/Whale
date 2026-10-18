@@ -1,7 +1,7 @@
-package com.school.dolphin.timetable.repository;
+package com.school.whale.timetable.repository;
 
 
-import com.school.dolphin.timetable.entity.SchoolRoom;
+import com.school.whale.timetable.entity.SchoolRoom;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

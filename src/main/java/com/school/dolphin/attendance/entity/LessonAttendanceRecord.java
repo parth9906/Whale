@@ -1,11 +1,11 @@
-package com.school.dolphin.attendance.entity;
+package com.school.whale.attendance.entity;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.student.entity.Student;
-import com.school.dolphin.timetable.entity.LessonOccurrence;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.student.entity.Student;
+import com.school.whale.timetable.entity.LessonOccurrence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,11 +1,11 @@
 
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
-import com.school.dolphin.identity.dto.AccessContextResponse;
-import com.school.dolphin.identity.entity.UserAccount;
-import com.school.dolphin.identity.entity.UserOrganizationScope;
-import com.school.dolphin.identity.repository.UserOrganizationScopeRepository;
-import com.school.dolphin.identity.security.AuthenticatedUserResolver;
+import com.school.whale.identity.dto.AccessContextResponse;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.entity.UserOrganizationScope;
+import com.school.whale.identity.repository.UserOrganizationScopeRepository;
+import com.school.whale.identity.security.AuthenticatedUserResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

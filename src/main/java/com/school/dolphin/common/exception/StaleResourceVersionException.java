@@ -1,4 +1,4 @@
-package com.school.dolphin.common.exception;
+package com.school.whale.common.exception;
 
 public class StaleResourceVersionException extends RuntimeException {
 

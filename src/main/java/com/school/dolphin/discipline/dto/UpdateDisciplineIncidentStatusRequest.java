@@ -1,6 +1,6 @@
-package com.school.dolphin.discipline.dto;
+package com.school.whale.discipline.dto;
 
-import com.school.dolphin.discipline.entity.DisciplineIncidentStatus;
+import com.school.whale.discipline.entity.DisciplineIncidentStatus;
 import jakarta.validation.constraints.NotNull;
 
 public record UpdateDisciplineIncidentStatusRequest(

@@ -1,7 +1,7 @@
-package com.school.dolphin.hostel.dto;
+package com.school.whale.hostel.dto;
 
-import com.school.dolphin.hostel.entity.Hostel;
-import com.school.dolphin.hostel.entity.HostelType;
+import com.school.whale.hostel.entity.Hostel;
+import com.school.whale.hostel.entity.HostelType;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

@@ -1,7 +1,7 @@
-package com.school.dolphin.analytics.controller;
+package com.school.whale.analytics.controller;
 
-import com.school.dolphin.analytics.dto.AnalyticsInstitutionSummaryResponse;
-import com.school.dolphin.analytics.service.AnalyticsService;
+import com.school.whale.analytics.dto.AnalyticsInstitutionSummaryResponse;
+import com.school.whale.analytics.service.AnalyticsService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

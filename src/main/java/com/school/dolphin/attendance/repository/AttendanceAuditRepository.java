@@ -1,7 +1,7 @@
 
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
-import com.school.dolphin.attendance.entity.AttendanceAudit;
+import com.school.whale.attendance.entity.AttendanceAudit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

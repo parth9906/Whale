@@ -1,6 +1,6 @@
-package com.school.dolphin.organization.repository;
+package com.school.whale.organization.repository;
 
-import com.school.dolphin.organization.entity.Campus;
+import com.school.whale.organization.entity.Campus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

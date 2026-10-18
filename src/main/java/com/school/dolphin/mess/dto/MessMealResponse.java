@@ -1,7 +1,7 @@
-package com.school.dolphin.mess.dto;
+package com.school.whale.mess.dto;
 
-import com.school.dolphin.mess.entity.MessMealRecord;
-import com.school.dolphin.mess.entity.MessMealType;
+import com.school.whale.mess.entity.MessMealRecord;
+import com.school.whale.mess.entity.MessMealType;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;

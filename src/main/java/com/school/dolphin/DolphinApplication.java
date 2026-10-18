@@ -1,4 +1,4 @@
-package com.school.dolphin;
+package com.school.whale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

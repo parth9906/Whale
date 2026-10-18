@@ -1,10 +1,10 @@
-package com.school.dolphin.attendance.controller;
+package com.school.whale.attendance.controller;
 
-import com.school.dolphin.attendance.dto.AttendanceAlertResponse;
-import com.school.dolphin.attendance.dto.AttendanceResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceItemResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceSummaryResponse;
-import com.school.dolphin.attendance.service.StudentPortalAttendanceService;
+import com.school.whale.attendance.dto.AttendanceAlertResponse;
+import com.school.whale.attendance.dto.AttendanceResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceItemResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceSummaryResponse;
+import com.school.whale.attendance.service.StudentPortalAttendanceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;

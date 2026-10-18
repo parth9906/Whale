@@ -1,4 +1,4 @@
-package com.school.dolphin.admissions.dto;
+package com.school.whale.admissions.dto;
 
 public record AdmissionApplicationSummaryResponse(
         long appliedCount,

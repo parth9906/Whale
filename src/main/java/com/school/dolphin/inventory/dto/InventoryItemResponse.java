@@ -1,8 +1,8 @@
-package com.school.dolphin.inventory.dto;
+package com.school.whale.inventory.dto;
 
-import com.school.dolphin.inventory.entity.InventoryItem;
-import com.school.dolphin.inventory.entity.InventoryItemCategory;
-import com.school.dolphin.inventory.entity.InventoryUnit;
+import com.school.whale.inventory.entity.InventoryItem;
+import com.school.whale.inventory.entity.InventoryItemCategory;
+import com.school.whale.inventory.entity.InventoryUnit;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

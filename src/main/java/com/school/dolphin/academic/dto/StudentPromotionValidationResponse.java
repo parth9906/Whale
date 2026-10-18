@@ -1,6 +1,6 @@
-package com.school.dolphin.academic.dto;
+package com.school.whale.academic.dto;
 
-import com.school.dolphin.academic.entity.PromotionBatchStatus;
+import com.school.whale.academic.entity.PromotionBatchStatus;
 
 import java.util.List;
 import java.util.UUID;

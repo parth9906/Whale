@@ -1,12 +1,12 @@
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.school.dolphin.attendance.dto.AttendanceGroupAggregate;
-import com.school.dolphin.attendance.dto.StudentAttendanceAggregate;
+import com.school.whale.attendance.dto.AttendanceGroupAggregate;
+import com.school.whale.attendance.dto.StudentAttendanceAggregate;
 import jakarta.persistence.LockModeType;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,7 +14,7 @@ import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.school.dolphin.attendance.entity.LessonAttendanceRecord;
+import com.school.whale.attendance.entity.LessonAttendanceRecord;
 
 public interface LessonAttendanceRepository
         extends JpaRepository<LessonAttendanceRecord, UUID> {
@@ -50,22 +50,22 @@ public interface LessonAttendanceRepository
             @Param("occurrenceId") UUID occurrenceId);
 
     @Query("""
-    select new com.school.dolphin.attendance.dto.StudentAttendanceAggregate(
+    select new com.school.whale.attendance.dto.StudentAttendanceAggregate(
         student.id,
         concat(student.firstName, ' ', student.lastName),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.ABSENT
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.ABSENT
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.EXCUSED
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.EXCUSED
             then a.id
         end)
     )
@@ -87,22 +87,22 @@ public interface LessonAttendanceRepository
 
 
     @Query("""
-    select new com.school.dolphin.attendance.dto.AttendanceGroupAggregate(
+    select new com.school.whale.attendance.dto.AttendanceGroupAggregate(
         section.id,
         concat(schoolClass.name, ' - ', section.name),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.ABSENT
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.ABSENT
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.EXCUSED
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.EXCUSED
             then a.id
         end)
     )
@@ -124,22 +124,22 @@ public interface LessonAttendanceRepository
 
 
     @Query("""
-    select new com.school.dolphin.attendance.dto.AttendanceGroupAggregate(
+    select new com.school.whale.attendance.dto.AttendanceGroupAggregate(
         subject.id,
         subject.name,
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.PRESENT
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.LATE
-              or a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.ABSENT
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.PRESENT
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.LATE
+              or a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.ABSENT
             then a.id
         end),
         count(case
-            when a.status = com.school.dolphin.attendance.entity.LessonAttendanceStatus.EXCUSED
+            when a.status = com.school.whale.attendance.entity.LessonAttendanceStatus.EXCUSED
             then a.id
         end)
     )

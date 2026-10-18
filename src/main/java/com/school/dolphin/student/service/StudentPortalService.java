@@ -1,7 +1,7 @@
-package com.school.dolphin.student.service;
+package com.school.whale.student.service;
 
-import com.school.dolphin.student.dto.StudentResponse;
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.student.dto.StudentResponse;
+import com.school.whale.student.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.repository;
+package com.school.whale.attendance.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.school.dolphin.attendance.entity.AttendanceAlert;
+import com.school.whale.attendance.entity.AttendanceAlert;
 
 public interface AttendanceAlertRepository
         extends JpaRepository<AttendanceAlert, UUID> {

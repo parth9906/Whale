@@ -1,5 +1,5 @@
 
-package com.school.dolphin.assessment.entity;
+package com.school.whale.assessment.entity;
 
 public enum AssessmentScope {
     INSTITUTION,

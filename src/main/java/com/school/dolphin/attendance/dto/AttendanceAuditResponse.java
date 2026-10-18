@@ -1,8 +1,8 @@
 
-package com.school.dolphin.attendance.dto;
+package com.school.whale.attendance.dto;
 
-import com.school.dolphin.attendance.entity.AttendanceAuditAction;
-import com.school.dolphin.attendance.entity.AttendanceStatus;
+import com.school.whale.attendance.entity.AttendanceAuditAction;
+import com.school.whale.attendance.entity.AttendanceStatus;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

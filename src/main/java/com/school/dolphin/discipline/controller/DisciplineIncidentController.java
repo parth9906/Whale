@@ -1,11 +1,11 @@
-package com.school.dolphin.discipline.controller;
+package com.school.whale.discipline.controller;
 
-import com.school.dolphin.discipline.dto.CreateDisciplineIncidentRequest;
-import com.school.dolphin.discipline.dto.DisciplineIncidentResponse;
-import com.school.dolphin.discipline.dto.UpdateDisciplineIncidentStatusRequest;
-import com.school.dolphin.discipline.entity.DisciplineIncidentStatus;
-import com.school.dolphin.discipline.entity.DisciplineSeverity;
-import com.school.dolphin.discipline.service.DisciplineIncidentService;
+import com.school.whale.discipline.dto.CreateDisciplineIncidentRequest;
+import com.school.whale.discipline.dto.DisciplineIncidentResponse;
+import com.school.whale.discipline.dto.UpdateDisciplineIncidentStatusRequest;
+import com.school.whale.discipline.entity.DisciplineIncidentStatus;
+import com.school.whale.discipline.entity.DisciplineSeverity;
+import com.school.whale.discipline.service.DisciplineIncidentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

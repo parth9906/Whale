@@ -1,11 +1,11 @@
 
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.notification.dto.NotificationOutboxFailureResponse;
-import com.school.dolphin.notification.dto.NotificationOutboxSummaryResponse;
-import com.school.dolphin.notification.repository.NotificationOutboxRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.notification.dto.NotificationOutboxFailureResponse;
+import com.school.whale.notification.dto.NotificationOutboxSummaryResponse;
+import com.school.whale.notification.repository.NotificationOutboxRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

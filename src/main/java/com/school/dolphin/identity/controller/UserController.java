@@ -1,18 +1,18 @@
 
-package com.school.dolphin.identity.controller;
+package com.school.whale.identity.controller;
 
-import com.school.dolphin.identity.dto.CreateOrganizationScopeRequest;
-import com.school.dolphin.identity.dto.CreateUserRequest;
-import com.school.dolphin.identity.dto.OrganizationScopeResponse;
-import com.school.dolphin.identity.dto.RoleResponse;
-import com.school.dolphin.identity.dto.UpdateUserRequest;
-import com.school.dolphin.identity.dto.UserOrganizationScopeDetailsResponse;
-import com.school.dolphin.identity.dto.UserResponse;
-import com.school.dolphin.identity.entity.OrganizationScopeType;
-import com.school.dolphin.identity.service.UserAdministrationService;
-import com.school.dolphin.identity.service.UserOrganizationScopeService;
-import com.school.dolphin.identity.service.UserRoleService;
-import com.school.dolphin.identity.service.UserService;
+import com.school.whale.identity.dto.CreateOrganizationScopeRequest;
+import com.school.whale.identity.dto.CreateUserRequest;
+import com.school.whale.identity.dto.OrganizationScopeResponse;
+import com.school.whale.identity.dto.RoleResponse;
+import com.school.whale.identity.dto.UpdateUserRequest;
+import com.school.whale.identity.dto.UserOrganizationScopeDetailsResponse;
+import com.school.whale.identity.dto.UserResponse;
+import com.school.whale.identity.entity.OrganizationScopeType;
+import com.school.whale.identity.service.UserAdministrationService;
+import com.school.whale.identity.service.UserOrganizationScopeService;
+import com.school.whale.identity.service.UserRoleService;
+import com.school.whale.identity.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

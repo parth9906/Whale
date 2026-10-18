@@ -1,8 +1,8 @@
 
-package com.school.dolphin.identity.repository;
+package com.school.whale.identity.repository;
 
-import com.school.dolphin.identity.entity.UserRole;
-import com.school.dolphin.identity.entity.UserRoleId;
+import com.school.whale.identity.entity.UserRole;
+import com.school.whale.identity.entity.UserRoleId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

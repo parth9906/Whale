@@ -1,9 +1,9 @@
 
-package com.school.dolphin.student.controller;
+package com.school.whale.student.controller;
 
-import com.school.dolphin.student.dto.*;
-import com.school.dolphin.student.service.StudentAccountLinkService;
-import com.school.dolphin.student.service.StudentService;
+import com.school.whale.student.dto.*;
+import com.school.whale.student.service.StudentAccountLinkService;
+import com.school.whale.student.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

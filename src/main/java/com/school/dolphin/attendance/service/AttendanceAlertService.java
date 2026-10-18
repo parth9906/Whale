@@ -1,22 +1,22 @@
-package com.school.dolphin.attendance.service;
+package com.school.whale.attendance.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import com.school.dolphin.attendance.entity.AttendanceAlert;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.notification.entity.NotificationOutbox;
-import com.school.dolphin.notification.repository.NotificationOutboxRepository;
+import com.school.whale.attendance.entity.AttendanceAlert;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.notification.entity.NotificationOutbox;
+import com.school.whale.notification.repository.NotificationOutboxRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.school.dolphin.attendance.repository.AttendanceAlertRepository;
-import com.school.dolphin.attendance.repository.LessonAttendanceRepository;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
+import com.school.whale.attendance.repository.AttendanceAlertRepository;
+import com.school.whale.attendance.repository.LessonAttendanceRepository;
+import com.school.whale.common.exception.BusinessRuleViolationException;
 
 import lombok.RequiredArgsConstructor;
 

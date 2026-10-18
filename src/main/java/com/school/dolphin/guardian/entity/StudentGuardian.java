@@ -1,7 +1,7 @@
 
-package com.school.dolphin.guardian.entity;
+package com.school.whale.guardian.entity;
 
-import com.school.dolphin.student.entity.Student;
+import com.school.whale.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.*;
 

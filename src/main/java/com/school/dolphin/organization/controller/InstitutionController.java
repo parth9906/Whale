@@ -1,8 +1,8 @@
-package com.school.dolphin.organization.controller;
+package com.school.whale.organization.controller;
 
-import com.school.dolphin.organization.dto.CreateInstitutionRequest;
-import com.school.dolphin.organization.dto.InstitutionResponse;
-import com.school.dolphin.organization.service.InstitutionService;
+import com.school.whale.organization.dto.CreateInstitutionRequest;
+import com.school.whale.organization.dto.InstitutionResponse;
+import com.school.whale.organization.service.InstitutionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

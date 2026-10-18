@@ -1,5 +1,5 @@
 
-package com.school.dolphin.identity.service;
+package com.school.whale.identity.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -50,12 +50,12 @@ public class InvitationEmailService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(fromAddress);
         message.setTo(recipientEmail);
-        message.setSubject("You're invited to Dolphin");
+        message.setSubject("You're invited to Whale");
 
         message.setText("""
                 Hello %s,
 
-                %s has invited you to join Dolphin.
+                %s has invited you to join Whale.
 
                 Assigned role: %s
                 Organization scope: %s
@@ -66,7 +66,7 @@ public class InvitationEmailService {
                 This invitation expires according to the invitation's validity period.
                 If you weren't expecting this invitation, you can ignore this email.
 
-                Dolphin
+                Whale
                 """.formatted(
                 firstName,
                 inviterName,

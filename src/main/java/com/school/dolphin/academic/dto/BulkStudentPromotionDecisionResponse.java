@@ -1,6 +1,6 @@
-package com.school.dolphin.academic.dto;
+package com.school.whale.academic.dto;
 
-import com.school.dolphin.academic.entity.StudentPromotionDecision;
+import com.school.whale.academic.entity.StudentPromotionDecision;
 
 import java.util.UUID;
 

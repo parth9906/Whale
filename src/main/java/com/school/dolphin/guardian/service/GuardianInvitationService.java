@@ -1,17 +1,17 @@
 
-package com.school.dolphin.guardian.service;
+package com.school.whale.guardian.service;
 
-import com.school.dolphin.guardian.dto.*;
-import com.school.dolphin.guardian.entity.Guardian;
-import com.school.dolphin.guardian.entity.GuardianInvitation;
-import com.school.dolphin.guardian.repository.GuardianInvitationRepository;
-import com.school.dolphin.guardian.repository.GuardianRepository;
-import com.school.dolphin.identity.entity.*;
-import com.school.dolphin.identity.repository.*;
-import com.school.dolphin.identity.security.AuthenticatedUser;
-import com.school.dolphin.identity.security.OrganizationScopeAuthorization;
-import com.school.dolphin.common.exception.BusinessRuleViolationException;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
+import com.school.whale.guardian.dto.*;
+import com.school.whale.guardian.entity.Guardian;
+import com.school.whale.guardian.entity.GuardianInvitation;
+import com.school.whale.guardian.repository.GuardianInvitationRepository;
+import com.school.whale.guardian.repository.GuardianRepository;
+import com.school.whale.identity.entity.*;
+import com.school.whale.identity.repository.*;
+import com.school.whale.identity.security.AuthenticatedUser;
+import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.common.exception.BusinessRuleViolationException;
+import com.school.whale.common.exception.ResourceNotFoundException;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

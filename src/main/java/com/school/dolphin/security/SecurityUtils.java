@@ -1,4 +1,4 @@
-package com.school.dolphin.security;
+package com.school.whale.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

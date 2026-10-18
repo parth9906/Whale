@@ -1,7 +1,7 @@
 
-package com.school.dolphin.identity.repository;
+package com.school.whale.identity.repository;
 
-import com.school.dolphin.identity.entity.Role;
+import com.school.whale.identity.entity.Role;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

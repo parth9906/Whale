@@ -1,12 +1,12 @@
 
-package com.school.dolphin.parent.controller;
+package com.school.whale.parent.controller;
 
-import com.school.dolphin.attendance.dto.AttendanceAlertResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceItemResponse;
-import com.school.dolphin.attendance.dto.ParentLessonAttendanceSummaryResponse;
-import com.school.dolphin.parent.dto.ParentAttendanceResponse;
-import com.school.dolphin.parent.dto.ParentPortalStudentResponse;
-import com.school.dolphin.parent.service.ParentPortalService;
+import com.school.whale.attendance.dto.AttendanceAlertResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceItemResponse;
+import com.school.whale.attendance.dto.ParentLessonAttendanceSummaryResponse;
+import com.school.whale.parent.dto.ParentAttendanceResponse;
+import com.school.whale.parent.dto.ParentPortalStudentResponse;
+import com.school.whale.parent.service.ParentPortalService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;

@@ -1,4 +1,4 @@
-package com.school.dolphin.organization.entity;
+package com.school.whale.organization.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

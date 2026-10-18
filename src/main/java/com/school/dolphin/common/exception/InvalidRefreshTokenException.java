@@ -1,4 +1,4 @@
-package com.school.dolphin.common.exception;
+package com.school.whale.common.exception;
 
 /**
  * Raised when a refresh token is missing, unknown, expired, revoked, or has

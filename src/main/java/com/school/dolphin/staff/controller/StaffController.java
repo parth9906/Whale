@@ -1,11 +1,11 @@
 
-package com.school.dolphin.staff.controller;
+package com.school.whale.staff.controller;
 
-import com.school.dolphin.staff.dto.*;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.service.StaffManagementService;
+import com.school.whale.staff.dto.*;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.service.StaffManagementService;
 
-import com.school.dolphin.staff.service.TeacherOnboardingService;
+import com.school.whale.staff.service.TeacherOnboardingService;
 import jakarta.validation.Valid;
 
 import lombok.AllArgsConstructor;

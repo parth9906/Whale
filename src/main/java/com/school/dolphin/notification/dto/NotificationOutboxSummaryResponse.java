@@ -1,4 +1,4 @@
-package com.school.dolphin.notification.dto;
+package com.school.whale.notification.dto;
 
 public record NotificationOutboxSummaryResponse(
         long pending,

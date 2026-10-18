@@ -1,8 +1,8 @@
-package com.school.dolphin.student.service;
+package com.school.whale.student.service;
 
-import com.school.dolphin.academic.entity.EnrollmentStatus;
-import com.school.dolphin.academic.entity.StudentEnrollment;
-import com.school.dolphin.academic.repository.StudentEnrollmentRepository;
+import com.school.whale.academic.entity.EnrollmentStatus;
+import com.school.whale.academic.entity.StudentEnrollment;
+import com.school.whale.academic.repository.StudentEnrollmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

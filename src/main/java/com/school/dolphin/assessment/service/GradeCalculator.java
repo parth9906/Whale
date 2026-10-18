@@ -1,4 +1,4 @@
-package com.school.dolphin.assessment.service;
+package com.school.whale.assessment.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

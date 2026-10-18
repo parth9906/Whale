@@ -1,4 +1,4 @@
-package com.school.dolphin.attendance.controller;
+package com.school.whale.attendance.controller;
 
 import java.util.UUID;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.school.dolphin.attendance.dto.GenerateAttendanceAlertsRequest;
-import com.school.dolphin.attendance.service.AttendanceAlertService;
+import com.school.whale.attendance.dto.GenerateAttendanceAlertsRequest;
+import com.school.whale.attendance.service.AttendanceAlertService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

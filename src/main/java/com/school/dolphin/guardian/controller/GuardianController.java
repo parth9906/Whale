@@ -1,8 +1,8 @@
 
-package com.school.dolphin.guardian.controller;
+package com.school.whale.guardian.controller;
 
-import com.school.dolphin.guardian.dto.*;
-import com.school.dolphin.guardian.service.GuardianService;
+import com.school.whale.guardian.dto.*;
+import com.school.whale.guardian.service.GuardianService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;

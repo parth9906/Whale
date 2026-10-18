@@ -1,5 +1,5 @@
 
-package com.school.dolphin.identity.dto;
+package com.school.whale.identity.dto;
 
 import java.time.OffsetDateTime;
 import java.util.List;

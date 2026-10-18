@@ -1,4 +1,4 @@
-package com.school.dolphin.common.config;
+package com.school.whale.common.config;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.context.annotation.Bean;

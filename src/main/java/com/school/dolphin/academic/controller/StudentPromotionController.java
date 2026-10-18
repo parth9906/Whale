@@ -1,7 +1,7 @@
-package com.school.dolphin.academic.controller;
+package com.school.whale.academic.controller;
 
-import com.school.dolphin.academic.dto.*;
-import com.school.dolphin.academic.service.StudentPromotionService;
+import com.school.whale.academic.dto.*;
+import com.school.whale.academic.service.StudentPromotionService;
 
 import jakarta.validation.Valid;
 

@@ -1,4 +1,4 @@
-package com.school.dolphin.identity.bootstrap;
+package com.school.whale.identity.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;

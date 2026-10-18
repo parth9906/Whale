@@ -1,12 +1,12 @@
 
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
-import com.school.dolphin.attendance.entity.AttendanceAlert;
-import com.school.dolphin.attendance.repository.AttendanceAlertRepository;
-import com.school.dolphin.common.exception.ResourceNotFoundException;
-import com.school.dolphin.guardian.entity.Guardian;
-import com.school.dolphin.guardian.entity.StudentGuardian;
-import com.school.dolphin.guardian.repository.StudentGuardianRepository;
+import com.school.whale.attendance.entity.AttendanceAlert;
+import com.school.whale.attendance.repository.AttendanceAlertRepository;
+import com.school.whale.common.exception.ResourceNotFoundException;
+import com.school.whale.guardian.entity.Guardian;
+import com.school.whale.guardian.entity.StudentGuardian;
+import com.school.whale.guardian.repository.StudentGuardianRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.school.dolphin.common.exception;
+package com.school.whale.common.exception;
 
 public class InvalidCredentialsException extends RuntimeException {
 

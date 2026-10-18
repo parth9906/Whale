@@ -1,3 +1,3 @@
-CREATE DATABASE dolphin;
+CREATE DATABASE whale;
 CREATE USER dolphin_user WITH PASSWORD 'your_password';
-GRANT ALL PRIVILEGES ON DATABASE dolphin TO dolphin_user;
+GRANT ALL PRIVILEGES ON DATABASE whale TO dolphin_user;

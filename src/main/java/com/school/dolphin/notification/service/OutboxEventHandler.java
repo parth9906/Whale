@@ -1,6 +1,6 @@
-package com.school.dolphin.notification.service;
+package com.school.whale.notification.service;
 
-import com.school.dolphin.notification.entity.NotificationOutbox;
+import com.school.whale.notification.entity.NotificationOutbox;
 
 public interface OutboxEventHandler {
 

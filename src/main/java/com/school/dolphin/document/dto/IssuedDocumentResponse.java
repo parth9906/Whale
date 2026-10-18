@@ -1,4 +1,4 @@
-package com.school.dolphin.document.dto;
+package com.school.whale.document.dto;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

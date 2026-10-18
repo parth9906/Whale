@@ -1,9 +1,9 @@
-package com.school.dolphin.timetable.repository;
+package com.school.whale.timetable.repository;
 
 
-import com.school.dolphin.timetable.entity.ScheduledLesson;
-import com.school.dolphin.staff.entity.StaffAssignmentStatus;
-import com.school.dolphin.staff.entity.StaffType;
+import com.school.whale.timetable.entity.ScheduledLesson;
+import com.school.whale.staff.entity.StaffAssignmentStatus;
+import com.school.whale.staff.entity.StaffType;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;

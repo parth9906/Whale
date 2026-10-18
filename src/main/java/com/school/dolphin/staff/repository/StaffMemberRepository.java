@@ -1,6 +1,6 @@
-package com.school.dolphin.staff.repository;
+package com.school.whale.staff.repository;
 
-import com.school.dolphin.staff.entity.StaffMember;
+import com.school.whale.staff.entity.StaffMember;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

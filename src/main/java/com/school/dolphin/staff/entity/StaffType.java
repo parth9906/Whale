@@ -1,4 +1,4 @@
-package com.school.dolphin.staff.entity;
+package com.school.whale.staff.entity;
 
 public enum StaffType {
     TEACHER,

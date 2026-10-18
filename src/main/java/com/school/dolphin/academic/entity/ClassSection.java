@@ -1,6 +1,6 @@
-package com.school.dolphin.academic.entity;
+package com.school.whale.academic.entity;
 
-import com.school.dolphin.organization.entity.Campus;
+import com.school.whale.organization.entity.Campus;
 import jakarta.persistence.*;
 import lombok.*;
 
