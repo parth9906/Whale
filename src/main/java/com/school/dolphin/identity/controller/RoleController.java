@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.data.domain.Page;
@@ -89,7 +90,12 @@ public class RoleController {
                 Sort.by(direction, safeSortBy)
         );
 
-        return roleService.search(search, active, pageable);
+        return roleService.search(
+                search,
+                active,
+                pageable,
+                SecurityContextHolder.getContext().getAuthentication()
+        );
     }
 
 }

@@ -9,6 +9,7 @@ import com.school.whale.identity.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,17 +59,30 @@ public class RoleService {
     public Page<RoleResponse> search(
             String search,
             Boolean active,
-            Pageable pageable
+            Pageable pageable,
+            Authentication authentication
     ) {
         String normalizedSearch = search == null
                 ? ""
                 : search.trim();
 
+        boolean isPlatformAdmin = authentication != null
+                && authentication.getAuthorities().stream()
+                .anyMatch(authority ->
+                        "ROLE_PLATFORM_ADMIN".equals(
+                                authority.getAuthority()
+                        )
+                );
+
         return roleRepository
-                .searchRoles(normalizedSearch, active, pageable)
+                .searchRoles(
+                        normalizedSearch,
+                        active,
+                        !isPlatformAdmin,
+                        pageable
+                )
                 .map(this::toResponse);
     }
-
     private RoleResponse toResponse(Role role) {
 
         return new RoleResponse(

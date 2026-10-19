@@ -19,37 +19,42 @@ public interface RoleRepository extends JpaRepository<Role, UUID> {
 
     Optional<Role> findByCode(String code);
 
+
     @Query(
             value = """
-            SELECT r
-            FROM Role r
-            WHERE (:active IS NULL OR r.active = :active)
-              AND (
-                    :search = ''
-                    OR LOWER(r.code) LIKE LOWER(CONCAT('%', :search, '%'))
-                    OR LOWER(r.name) LIKE LOWER(CONCAT('%', :search, '%'))
-                    OR LOWER(COALESCE(r.description, ''))
-                       LIKE LOWER(CONCAT('%', :search, '%'))
-              )
-            """,
+        SELECT r
+        FROM Role r
+        WHERE (:active IS NULL OR r.active = :active)
+          AND (:excludePlatformAdmin = FALSE OR r.code <> 'PLATFORM_ADMIN')
+          AND (
+                :search = ''
+                OR LOWER(r.code) LIKE LOWER(CONCAT('%', :search, '%'))
+                OR LOWER(r.name) LIKE LOWER(CONCAT('%', :search, '%'))
+                OR LOWER(COALESCE(r.description, ''))
+                   LIKE LOWER(CONCAT('%', :search, '%'))
+          )
+        """,
             countQuery = """
-            SELECT COUNT(r)
-            FROM Role r
-            WHERE (:active IS NULL OR r.active = :active)
-              AND (
-                    :search = ''
-                    OR LOWER(r.code) LIKE LOWER(CONCAT('%', :search, '%'))
-                    OR LOWER(r.name) LIKE LOWER(CONCAT('%', :search, '%'))
-                    OR LOWER(COALESCE(r.description, ''))
-                       LIKE LOWER(CONCAT('%', :search, '%'))
-              )
-            """
+        SELECT COUNT(r)
+        FROM Role r
+        WHERE (:active IS NULL OR r.active = :active)
+          AND (:excludePlatformAdmin = FALSE OR r.code <> 'PLATFORM_ADMIN')
+          AND (
+                :search = ''
+                OR LOWER(r.code) LIKE LOWER(CONCAT('%', :search, '%'))
+                OR LOWER(r.name) LIKE LOWER(CONCAT('%', :search, '%'))
+                OR LOWER(COALESCE(r.description, ''))
+                   LIKE LOWER(CONCAT('%', :search, '%'))
+          )
+        """
     )
     Page<Role> searchRoles(
             @Param("search") String search,
             @Param("active") Boolean active,
+            @Param("excludePlatformAdmin") boolean excludePlatformAdmin,
             Pageable pageable
     );
+
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT r FROM Role r WHERE r.id = :roleId")
