@@ -3,6 +3,9 @@ package com.school.whale.identity.service;
 
 import com.school.whale.common.exception.ResourceNotFoundException;
 import com.school.whale.identity.dto.OrganizationScopeResponse;
+import com.school.whale.identity.dto.CreateOrganizationScopeRequest;
+import com.school.whale.identity.dto.CreateUserRequest;
+import com.school.whale.identity.dto.ProvisionUserRequest;
 import com.school.whale.identity.dto.RoleResponse;
 import com.school.whale.identity.dto.UserOrganizationScopeDetailsResponse;
 import com.school.whale.identity.dto.UserResponse;
@@ -42,6 +45,8 @@ public class UserAdministrationService {
     private final RoleRepository roleRepository;
 
     private final UserRoleService userRoleService;
+    private final UserService userService;
+    private final UserOrganizationScopeService userOrganizationScopeService;
     private final OrganizationScopeAuthorization scopeAuthorization;
 
     private final EnterpriseRepository enterpriseRepository;
@@ -49,6 +54,67 @@ public class UserAdministrationService {
     private final ClusterRepository clusterRepository;
     private final InstitutionRepository institutionRepository;
     private final CampusRepository campusRepository;
+
+    @Transactional
+    public UserResponse provision(
+            ProvisionUserRequest request,
+            Authentication authentication
+    ) {
+        if (request.scopes() == null || request.scopes().isEmpty()) {
+            throw new com.school.whale.common.exception.BusinessRuleViolationException(
+                    "At least one organization scope is required");
+        }
+
+        // Validate all scopes before creating the account.
+        java.util.Set<String> uniqueScopes = new java.util.HashSet<>();
+        for (CreateOrganizationScopeRequest scope : request.scopes()) {
+            if (scope.scopeType() == null || scope.scopeId() == null) {
+                throw new com.school.whale.common.exception.BusinessRuleViolationException(
+                        "Every scope must have a type and ID");
+            }
+
+            String key = scope.scopeType().name() + ":" + scope.scopeId();
+            if (!uniqueScopes.add(key)) {
+                throw new com.school.whale.common.exception.BusinessRuleViolationException(
+                        "Duplicate organization scope: " + key);
+            }
+
+            assertScopeAccessible(scope.scopeType(), scope.scopeId(), authentication);
+        }
+
+        Role role = roleRepository.findById(request.roleId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Role not found: " + request.roleId()));
+
+        if (!role.isActive()) {
+            throw new com.school.whale.common.exception.BusinessRuleViolationException(
+                    "Cannot assign an inactive role");
+        }
+
+        if ("PLATFORM_ADMIN".equals(role.getCode())
+                && !SecurityUtils.isPlatformAdmin(authentication)) {
+            throw new AccessDeniedException(
+                    "Only a platform administrator can assign "
+                            + "the PLATFORM_ADMIN role");
+        }
+
+        UserResponse created = userService.create(new CreateUserRequest(
+                request.username().trim(),
+                request.email().trim(),
+                request.password(),
+                request.firstName().trim(),
+                request.lastName() == null ? null : request.lastName().trim()
+        ));
+
+        userRoleService.assignRole(created.id(), request.roleId());
+
+        for (CreateOrganizationScopeRequest scope : request.scopes()) {
+            userOrganizationScopeService.assignScope(created.id(), scope);
+        }
+
+        return created;
+    }
 
     @Transactional(readOnly = true)
     public Page<UserResponse> directory(

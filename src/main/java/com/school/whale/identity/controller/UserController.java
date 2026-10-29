@@ -3,6 +3,7 @@ package com.school.whale.identity.controller;
 
 import com.school.whale.identity.dto.CreateOrganizationScopeRequest;
 import com.school.whale.identity.dto.CreateUserRequest;
+import com.school.whale.identity.dto.ProvisionUserRequest;
 import com.school.whale.identity.dto.OrganizationScopeResponse;
 import com.school.whale.identity.dto.RoleResponse;
 import com.school.whale.identity.dto.UpdateUserRequest;
@@ -52,6 +53,18 @@ public class UserController {
             @Valid @RequestBody CreateUserRequest request
     ) {
         return userService.create(request);
+    }
+
+    @PostMapping("/provision")
+    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAuthority('USER_CREATE') and "
+            + "hasAuthority('USER_ROLE_ASSIGN') and "
+            + "hasAuthority('USER_SCOPE_ASSIGN')")
+    public UserResponse provision(
+            @Valid @RequestBody ProvisionUserRequest request,
+            Authentication authentication
+    ) {
+        return userAdministrationService.provision(request, authentication);
     }
 
     @GetMapping("/directory")
