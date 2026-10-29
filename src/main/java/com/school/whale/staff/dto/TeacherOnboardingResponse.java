@@ -1,7 +1,5 @@
-
 package com.school.whale.staff.dto;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 public record TeacherOnboardingResponse(
@@ -14,7 +12,5 @@ public record TeacherOnboardingResponse(
         String email,
         String roleCode,
         String staffStatus,
-        String invitationStatus,
-        OffsetDateTime invitationExpiresAt,
         String message
 ) {}

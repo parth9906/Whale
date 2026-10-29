@@ -1,4 +1,3 @@
-
 package com.school.whale.identity.controller;
 
 import com.school.whale.identity.dto.AcceptUserInvitationRequest;

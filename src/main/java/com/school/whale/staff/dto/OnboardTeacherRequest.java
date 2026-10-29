@@ -1,6 +1,6 @@
-
 package com.school.whale.staff.dto;
 
+import com.school.whale.identity.validation.BcryptPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -10,17 +10,16 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public record OnboardTeacherRequest(
-        @NotBlank
-        @Size(max = 100)
+        @NotBlank @Size(max = 100)
         String username,
 
-        @NotBlank
-        @Email
-        @Size(max = 255)
+        @NotBlank @Email @Size(max = 255)
         String email,
 
-        @NotBlank
-        @Size(max = 100)
+        @NotBlank @Size(min = 8, max = 100) @BcryptPassword
+        String password,
+
+        @NotBlank @Size(max = 100)
         String firstName,
 
         @Size(max = 100)
@@ -31,12 +30,10 @@ public record OnboardTeacherRequest(
 
         UUID campusId,
 
-        @NotBlank
-        @Size(max = 50)
+        @NotBlank @Size(max = 50)
         String employeeNumber,
 
-        @NotBlank
-        @Size(max = 120)
+        @NotBlank @Size(max = 120)
         String jobTitle,
 
         @NotNull

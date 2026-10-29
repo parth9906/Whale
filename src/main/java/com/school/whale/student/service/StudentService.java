@@ -4,6 +4,10 @@ import com.school.whale.common.exception.BusinessRuleViolationException;
 import com.school.whale.common.exception.DuplicateResourceException;
 import com.school.whale.common.exception.ResourceNotFoundException;
 import com.school.whale.identity.security.OrganizationScopeAuthorization;
+import com.school.whale.identity.dto.CreateUserRequest;
+import com.school.whale.identity.entity.UserAccount;
+import com.school.whale.identity.repository.UserAccountRepository;
+import com.school.whale.identity.service.UserService;
 import com.school.whale.organization.entity.Campus;
 import com.school.whale.organization.entity.Institution;
 import com.school.whale.organization.repository.CampusRepository;
@@ -11,6 +15,7 @@ import com.school.whale.organization.repository.InstitutionRepository;
 import com.school.whale.security.SecurityUtils;
 import com.school.whale.student.dto.CreateStudentRequest;
 import com.school.whale.student.dto.StudentResponse;
+import com.school.whale.student.dto.LinkStudentAccountRequest;
 import com.school.whale.student.dto.UpdateStudentRequest;
 import com.school.whale.student.entity.Student;
 import com.school.whale.student.repository.StudentRepository;
@@ -30,17 +35,26 @@ public class StudentService {
     private final InstitutionRepository institutionRepository;
     private final CampusRepository campusRepository;
     private final OrganizationScopeAuthorization organizationScopeAuthorization;
+    private final UserService userService;
+    private final UserAccountRepository userAccountRepository;
+    private final StudentAccountLinkService studentAccountLinkService;
 
     public StudentService(
             StudentRepository studentRepository,
             InstitutionRepository institutionRepository,
             CampusRepository campusRepository,
-            OrganizationScopeAuthorization organizationScopeAuthorization
+            OrganizationScopeAuthorization organizationScopeAuthorization,
+            UserService userService,
+            UserAccountRepository userAccountRepository,
+            StudentAccountLinkService studentAccountLinkService
     ) {
         this.studentRepository = studentRepository;
         this.institutionRepository = institutionRepository;
         this.campusRepository = campusRepository;
         this.organizationScopeAuthorization = organizationScopeAuthorization;
+        this.userService = userService;
+        this.userAccountRepository = userAccountRepository;
+        this.studentAccountLinkService = studentAccountLinkService;
     }
 
     @Transactional
@@ -122,7 +136,47 @@ public class StudentService {
                 .active(true)
                 .build();
 
-        return toResponse(studentRepository.save(student));
+        Student savedStudent = studentRepository.save(student);
+
+        boolean hasUsername = hasText(request.username());
+        boolean hasEmail = hasText(request.email());
+        boolean hasPassword = hasText(request.password());
+
+        // Keep profile-only creation backward compatible.
+        if (!hasUsername && !hasEmail && !hasPassword) {
+            return toResponse(savedStudent);
+        }
+
+        // Never create a partially provisioned login.
+        if (!hasUsername || !hasEmail || !hasPassword) {
+            throw new BusinessRuleViolationException(
+                    "Username, email, and password must all be provided to create a student login"
+            );
+        }
+
+        String username = request.username().trim();
+        String email = request.email().trim();
+
+        userService.create(new CreateUserRequest(
+                username,
+                email,
+                request.password(),
+                savedStudent.getFirstName(),
+                savedStudent.getLastName()
+        ));
+
+        UserAccount account = userAccountRepository.findByUsername(username)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Created user account could not be found"
+                ));
+
+        studentAccountLinkService.link(
+                savedStudent.getId(),
+                new LinkStudentAccountRequest(account.getId()),
+                authentication
+        );
+
+        return toResponse(savedStudent);
     }
 
     @Transactional(readOnly = true)
@@ -410,6 +464,10 @@ public class StudentService {
                     "You do not have access to this student's organization"
             );
         }
+    }
+
+    private boolean hasText(String value) {
+        return value != null && !value.isBlank();
     }
 
     private StudentResponse toResponse(Student student) {

@@ -69,10 +69,7 @@ public class StaffController {
 
     @PostMapping("/onboard-teacher")
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize(
-            "hasAuthority('STAFF_CREATE') and " +
-                    "hasAuthority('USER_INVITATION_CREATE')"
-    )
+    @PreAuthorize("hasAuthority('STAFF_CREATE')")
     public TeacherOnboardingResponse onboardTeacher(
             @Valid @RequestBody OnboardTeacherRequest request,
             Authentication authentication
